@@ -79,7 +79,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Elma Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Elma is an event loop and process manager for embedded systems. Elma is structured as a C++ library of classes on top of which you build your own C++ project. It keeps track of processes, finite state machines, events, and communication channels, executing them at specified frequencies. Elma was developed as part of the University of Washington's ECE P520 course on advanced embedded systems programming.</p>
+<div class="textblock"><p>Elma is an event loop and process manager for embedded systems. Elma is structured as a C++ library of classes on top of which you build your own C++ project. It keeps track of processes, finite state machines, events, and communication channels, executing them at specified frequencies. Elma was developed as part of the University of Washington's <a href="https://github.com/klavins/ECEP520">ECE P 520 course</a> on advanced embedded systems programming. More information on how Elma was designed can be found in the links below:</p><ul>
+<li><a href="https://github.com/klavins/ECEP520/tree/master/week_6">Event loop management</a></li>
+<li><a href="https://github.com/klavins/ECEP520/tree/master/week_7">Events and finite state machines</a></li>
+<li><a href="https://github.com/klavins/ECEP520/blob/master/week_8">HTTP in event loops</a></li>
+</ul>
 <h1>Installation </h1>
 <h2>From Dockerhub </h2>
 <p>To get started, you need a C++ build environment. We have provided one with the Docker container <code>elma</code>, which you can use as follows: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
@@ -109,7 +113,7 @@ examples/bin/basic
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P520<br>
-  Generated on Mon Mar 4 2019 19:56:25 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Mon Mar 4 2019 20:12:04 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>
