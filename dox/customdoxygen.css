@@ -23,3 +23,8 @@ h2 {
     font-weight: normal;
     color: #354C7B;
 }
+
+.fragment {
+    margin-left: 28px !important;
+    margin-right: 28px !important;    
+}

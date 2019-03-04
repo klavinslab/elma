@@ -10,26 +10,25 @@ From Dockerhub
 ---
 
 To get started, you need a C++ build environment. We have provided one with the Docker container `elma`, which you can use as follows:
-```bash
-git clone https://github.com/klavinslab/elma.git
-cd elma
-docker run -v $PWD:/source -it klavins/ecep520:elma bash
-make
-examples/bin/basic
-```
+
+    git clone https://github.com/klavinslab/elma.git
+    cd elma
+    docker run -v $PWD:/source -it klavins/ecep520:elma bash
+    make
+    examples/bin/basic
 
 From the Dockerfile
 ---
 
 You can also build the docker environment, described in env/Dockerfile, yourself with the following commands:
-```bash
-git clone https://github.com/klavinslab/elma.git
-cd elma
-docker build -t myelma env
-docker run -v $PWD:/source -it myelma bash
-make
-examples/bin/basic
-```
+
+    git clone https://github.com/klavinslab/elma.git
+    cd elma
+    docker build -t myelma env
+    docker run -v $PWD:/source -it myelma bash
+    make
+    examples/bin/basic
+
 
 Manual Installation
 ---
