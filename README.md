@@ -1,4 +1,44 @@
-Elma is an event loop and process manager for embedded systems. It keeps track of processes, executes them at specified frequencies, and enables interprocess communication. It includes interprocess communications, event management, and finite state machines.
+Elma
+===
 
-For examples of how to use Elma, see the files in the examples directory.
+Elma is an event loop and process manager for embedded systems. Elma is structured as a C++ library of classes on top of which you build your own C++ project. It keeps track of processes, finite state machines, events, and communication channels, executing them at specified frequencies. Elma was developed as part of the University of Washington's ECE P520 course on advanced embedded systems programming. 
+
+Installation
+===
+
+From Dockerhub
+---
+
+To get started, you need a C++ build environment. We have provided one with the Docker container `elma`, which you can use as follows:
+```bash
+git clone https://github.com/klavinslab/elma.git
+cd elma
+docker run -v $PWD:/source -it klavins/ecep520:elma bash
+make
+examples/bin/basic
+```
+
+From the Dockerfile
+---
+
+You can also build the docker environment, described in env/Dockerfile, yourself with the following commands:
+```bash
+git clone https://github.com/klavinslab/elma.git
+cd elma
+docker build -t myelma env
+docker run -v $PWD:/source -it myelma bash
+make
+examples/bin/basic
+```
+
+Manual Installation
+---
+
+To install Elma without using Docker, you will need the following tools:
+- [gcc](https://gcc.gnu.org/) 4.9 or an equivalent C/C++ compiler that supports at least C++14
+- Make (if you want to use the makefile. Alternatively, you can use some other build manager)
+- [Doxygen](http://www.doxygen.nl/)
+- [Google Test](https://github.com/google/googletest)
+- Neils Lohmann's JSON library: https://github.com/nlohmann/json
+- [My fork](https://github.com/klavins/cpp-httplib.git) of [yhirose](https://github.com/yhirose)'s HTTP library
 

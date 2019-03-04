@@ -26,6 +26,7 @@ OBJECTS     := $(patsubst %.cc, $(BUILDDIR)/%.o, $(notdir $(SOURCES)))
 
 #Defauilt Make
 all: directories $(TARGETDIR)/$(TARGET) tests example
+	echo $(SOURCES) $(HEADERS)
 
 #Remake
 remake: cleaner all
@@ -41,13 +42,11 @@ tests:
 example:
 	cd examples && $(MAKE)
 
-docs: $(SOURCES) $(HEADERS)
+docs: docs/index.html
+
+docs/index.html: $(SOURCES) $(HEADERS) README.md docs.config dox/*
 	$(DGEN) $(DGENCONFIG)
 	cp .nojekyll docs
-
-publish: 
-	rm -r ../../docs/
-	cp -r html ../../docs
 
 #Clean only Objects
 clean:
