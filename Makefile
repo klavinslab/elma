@@ -68,4 +68,3 @@ $(TARGETDIR)/$(TARGET): $(OBJECTS) $(HEADERS)
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT) $(HEADERS)
 	$(CC) $(CFLAGS) $(INC) -c -fPIC -o $@ $<
 
-.PHONY: directories remake clean cleaner apidocs $(BUILDDIR) $(TARGETDIR)
