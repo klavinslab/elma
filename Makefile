@@ -43,6 +43,7 @@ example:
 
 docs: $(SOURCES) $(HEADERS)
 	$(DGEN) $(DGENCONFIG)
+	cp .nojekyll docs
 
 publish: 
 	rm -r ../../docs/
