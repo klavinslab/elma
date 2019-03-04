@@ -13,6 +13,13 @@
     color: #777;
 }
 
+h1 {
+    border-bottom: 1px solid #879ECB;
+    padding-bottom: 10px;
+    color: #354C7B;    
+}
+
 h2 {
-    color: #003399;
+    font-weight: normal;
+    color: #354C7B;
 }

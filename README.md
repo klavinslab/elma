@@ -42,3 +42,6 @@ To install Elma without using Docker, you will need the following tools:
 - Neils Lohmann's JSON library: https://github.com/nlohmann/json
 - [My fork](https://github.com/klavins/cpp-httplib.git) of [yhirose](https://github.com/yhirose)'s HTTP library
 
+Usage
+===
+See the examples in the `examples` directory for how to build new event loops with Elma.
