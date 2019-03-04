@@ -9,6 +9,8 @@ Elma is an event loop and process manager for embedded systems. Elma is structur
 Installation
 ===
 
+The source code for Elma [is on Github](https://github.com/klavinslab/elma).
+
 From Dockerhub
 ---
 
