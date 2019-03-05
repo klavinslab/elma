@@ -1,6 +1,6 @@
 <map id="elma::State" name="elma::State">
-<area shape="rect" id="node2" href="$classDoorClosedOff.html" title="DoorClosedOff" alt="" coords="5,80,120,107"/>
-<area shape="rect" id="node3" href="$classDoorClosedOn.html" title="DoorClosedOn" alt="" coords="144,80,259,107"/>
-<area shape="rect" id="node4" href="$classDoorOpen.html" title="DoorOpen" alt="" coords="283,80,370,107"/>
-<area shape="rect" id="node5" href="$classMode.html" title="Mode" alt="" coords="394,80,451,107"/>
+<area shape="rect" id="node2" href="$classmicrowave__example_1_1DoorClosedOff.html" title="microwave_example::\lDoorClosedOff" alt="" coords="156,5,316,47"/>
+<area shape="rect" id="node3" href="$classmicrowave__example_1_1DoorClosedOn.html" title="microwave_example::\lDoorClosedOn" alt="" coords="156,71,316,112"/>
+<area shape="rect" id="node4" href="$classmicrowave__example_1_1DoorOpen.html" title="microwave_example::\lDoorOpen" alt="" coords="156,136,316,177"/>
+<area shape="rect" id="node5" href="$classtoggle__switch__example_1_1Mode.html" title="toggle_switch_example\l::Mode" alt="" coords="151,201,321,243"/>
 </map>

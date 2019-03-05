@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['transition',['Transition',['../classelma_1_1Transition.html',1,'elma']]],
-  ['trigger',['Trigger',['../classTrigger.html',1,'']]]
+  ['state',['State',['../classelma_1_1State.html',1,'elma']]],
+  ['statemachine',['StateMachine',['../classelma_1_1StateMachine.html',1,'elma']]]
 ];

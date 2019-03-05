@@ -8,80 +8,84 @@
 using namespace std::chrono;
 using namespace elma;
 
-class Power : public Process {
+namespace microwave_example {
 
-    public:
-    Power() : Process("power") {}
-    void init() {
-        watch("on", [this](Event& e) {
-            running = true;
-        });
-        watch("off", [this](Event &e) {
-            running = false;
-        });
-        watch("set power", [this](Event& e) {
-            power_level = e.value();
-        });
-    }
-    void start() {
-        running = false;
-        power_level = 0;
-    }
-    void update() {}
-    void stop() {}
+    class Power : public Process {
 
-    bool running;
-    double power_level;
-
-};
-
-class DoorClosedOff : public State {
-    public:
-    DoorClosedOff() : State("Door closed off") {}
-    void entry(const Event& e) {
-        if ( e.name() == "power level set" ) {
-            emit(Event("set power", e.value()));
+        public:
+        Power() : Process("power") {}
+        void init() {
+            watch("on", [this](Event& e) {
+                running = true;
+            });
+            watch("off", [this](Event &e) {
+                running = false;
+            });
+            watch("set power", [this](Event& e) {
+                power_level = e.value();
+            });
         }
-    }
-    void during() {} 
-    void exit(const Event& e) {
-        if ( e.name() == "on button pressed" ) {
-            emit(Event("on"));
-        }        
-    }
-};
+        void start() {
+            running = false;
+            power_level = 0;
+        }
+        void update() {}
+        void stop() {}
 
-class DoorClosedOn : public State {
-    public:
-    DoorClosedOn() : State("Door closed on") {}
-    void entry(const Event& e) {}
-    void during() {} 
-    void exit(const Event& e) {
-        emit(Event("off"));
-    }
-};
+        bool running;
+        double power_level;
 
-class DoorOpen : public State {
-    public:
-    DoorOpen() : State("Door open") {}
-    void entry(const Event& e) {
-        if ( e.name() == "power level set" ) {
-            emit(Event("set power", e.value()));
-        }           
-    }
-    void during() {} 
-    void exit(const Event& e) {}
-};
+    };
+
+    class DoorClosedOff : public State {
+        public:
+        DoorClosedOff() : State("Door closed off") {}
+        void entry(const Event& e) {
+            if ( e.name() == "power level set" ) {
+                emit(Event("set power", e.value()));
+            }
+        }
+        void during() {} 
+        void exit(const Event& e) {
+            if ( e.name() == "on button pressed" ) {
+                emit(Event("on"));
+            }        
+        }
+    };
+
+    class DoorClosedOn : public State {
+        public:
+        DoorClosedOn() : State("Door closed on") {}
+        void entry(const Event& e) {}
+        void during() {} 
+        void exit(const Event& e) {
+            emit(Event("off"));
+        }
+    };
+
+    class DoorOpen : public State {
+        public:
+        DoorOpen() : State("Door open") {}
+        void entry(const Event& e) {
+            if ( e.name() == "power level set" ) {
+                emit(Event("set power", e.value()));
+            }           
+        }
+        void during() {} 
+        void exit(const Event& e) {}
+    };
+
+}
 
 TEST(Microwave, Safety) {
 
     Manager m;
 
-    Power power;
+    microwave_example::Power power;
 
-    DoorClosedOff closed_off;
-    DoorClosedOn closed_on;
-    DoorOpen open;        
+    microwave_example::DoorClosedOff closed_off;
+    microwave_example::DoorClosedOn closed_on;
+    microwave_example::DoorOpen open;        
 
     StateMachine microwave;
 

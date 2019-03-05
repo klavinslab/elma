@@ -146,26 +146,39 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span><a class="code" href="classMyProcess.html">MyProcess</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    <a class="code" href="classMyProcess.html">MyProcess</a>(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>() {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#a728729b28a435d000ef059b1d4b9ff16">start</a>() {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#a16f0db2f3f19b6c6493735b4d25f55c8">update</a>() { </div>
-<div class="line">        std::cout &lt;&lt; name() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> </div>
-<div class="line">                &lt;&lt; milli_time()</div>
-<div class="line">                &lt;&lt; <span class="stringliteral">&quot;ms\n&quot;</span>;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#af7e5060212d746c6376eae6551d200fd">stop</a>() {}</div>
-<div class="line">};</div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespacebasic__example.html">basic_example</a> {</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">class </span>BasicProcess : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line"></div>
+<div class="line">        BasicProcess(std::string name) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#a728729b28a435d000ef059b1d4b9ff16">start</a>() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#a16f0db2f3f19b6c6493735b4d25f55c8">update</a>() { </div>
+<div class="line">            std::cout &lt;&lt; name() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> </div>
+<div class="line">                    &lt;&lt; milli_time()</div>
+<div class="line">                    &lt;&lt; <span class="stringliteral">&quot;ms\n&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Manager.html#af7e5060212d746c6376eae6551d200fd">stop</a>() {}</div>
+<div class="line">    };</div>
+<div class="line"></div>
+<div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
-<div class="line">    <a class="code" href="classMyProcess.html">MyProcess</a> p(<span class="stringliteral">&quot;A&quot;</span>), q(<span class="stringliteral">&quot;B&quot;</span>);</div>
-<div class="line">    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(p, 1_ms)</div>
-<div class="line">     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(q, 5_ms)</div>
-<div class="line">     .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()</div>
-<div class="line">     .<a class="code" href="classelma_1_1Manager.html#ad5df7316416ac9697d62e68e21f04758">run</a>(11_ms);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m; <span class="comment">// Make a manager</span></div>
+<div class="line">    <a class="code" href="classbasic__example_1_1BasicProcess.html">basic_example:: BasicProcess</a> p(<span class="stringliteral">&quot;A&quot;</span>), q(<span class="stringliteral">&quot;B&quot;</span>); <span class="comment">// Make two processes</span></div>
+<div class="line"></div>
+<div class="line">    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(p, 1_ms) <span class="comment">// Schedule the first to run every millisecond</span></div>
+<div class="line">     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(q, 5_ms) <span class="comment">// Schedule the second to run every 5 milliseconds</span></div>
+<div class="line">     .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()            <span class="comment">// Initialize the manager (which calls init for the processes)</span></div>
+<div class="line">     .<a class="code" href="classelma_1_1Manager.html#ad5df7316416ac9697d62e68e21f04758">run</a>(11_ms);       <span class="comment">// Run for 11 milliseconds</span></div>
+<div class="line">     </div>
 <div class="line">}</div>
 </div><!-- fragment --> 
 <p>Definition at line <a class="el" href="manager_8h_source.html#l00026">26</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
@@ -496,7 +509,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 5 2019 14:10:24 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Tue Mar 5 2019 17:56:43 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>

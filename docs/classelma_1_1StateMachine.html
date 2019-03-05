@@ -212,33 +212,37 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span><a class="code" href="classTrigger.html">Trigger</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    <a class="code" href="classTrigger.html">Trigger</a>() : <a class="code" href="classelma_1_1Process.html">Process</a>(<span class="stringliteral">&quot;trigger&quot;</span>) {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed">init</a>() {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#a302e89347b025e658b806be343cd532a">start</a>() {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#ac319b67fdd0c1997e6807dbc5e310aef">update</a>() { </div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;switch at &quot;</span> &lt;&lt; <a class="code" href="classelma_1_1Process.html#a713075c26ec23e09576ec966fb4be6ea">milli_time</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line">        emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;switch&quot;</span>));</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#a57d866797c065ffe8ddfedd541bb77e1">stop</a>() {}</div>
-<div class="line">};</div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespacetoggle__switch__example.html">toggle_switch_example</a> {</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span><a class="code" href="classMode.html">Mode</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1State.html">State</a> {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    <a class="code" href="classMode.html">Mode</a>(std::string <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>) : <a class="code" href="classelma_1_1State.html">State</a>(name) {}</div>
-<div class="line">    <span class="keywordtype">void</span> entry(<span class="keyword">const</span> <a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;entering &quot;</span> + <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> during() {}</div>
-<div class="line">    <span class="keywordtype">void</span> exit(<span class="keyword">const</span> <a class="code" href="classelma_1_1Event.html">Event</a>&amp;) {}</div>
-<div class="line">};</div>
+<div class="line">    <span class="keyword">class </span>Trigger : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line">        Trigger() : <a class="code" href="classelma_1_1Process.html">Process</a>(<span class="stringliteral">&quot;trigger&quot;</span>) {}</div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed">init</a>() {}</div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#a302e89347b025e658b806be343cd532a">start</a>() {}</div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#ac319b67fdd0c1997e6807dbc5e310aef">update</a>() { </div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;switch at &quot;</span> &lt;&lt; <a class="code" href="classelma_1_1Process.html#a713075c26ec23e09576ec966fb4be6ea">milli_time</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">            emit(<a class="code" href="classelma_1_1Event.html">Event</a>(<span class="stringliteral">&quot;switch&quot;</span>));</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1StateMachine.html#a57d866797c065ffe8ddfedd541bb77e1">stop</a>() {}</div>
+<div class="line">    };</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">class </span>Mode : <span class="keyword">public</span> <a class="code" href="classelma_1_1State.html">State</a> {</div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line">        Mode(std::string <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>) : <a class="code" href="classelma_1_1State.html">State</a>(name) {}</div>
+<div class="line">        <span class="keywordtype">void</span> entry(<span class="keyword">const</span> <a class="code" href="classelma_1_1Event.html">Event</a>&amp; e) {</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;entering &quot;</span> + <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordtype">void</span> during() {}</div>
+<div class="line">        <span class="keywordtype">void</span> exit(<span class="keyword">const</span> <a class="code" href="classelma_1_1Event.html">Event</a>&amp;) {}</div>
+<div class="line">    };</div>
+<div class="line"></div>
+<div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
-<div class="line">    <a class="code" href="classTrigger.html">Trigger</a> trigger;</div>
-<div class="line">    <a class="code" href="classMode.html">Mode</a> off(<span class="stringliteral">&quot;off&quot;</span>), on(<span class="stringliteral">&quot;on&quot;</span>);</div>
+<div class="line">    <a class="code" href="classtoggle__switch__example_1_1Trigger.html">toggle_switch_example::Trigger</a> trigger;</div>
+<div class="line">    <a class="code" href="classtoggle__switch__example_1_1Mode.html">toggle_switch_example::Mode</a> off(<span class="stringliteral">&quot;off&quot;</span>), on(<span class="stringliteral">&quot;on&quot;</span>);</div>
 <div class="line">    <a class="code" href="classelma_1_1StateMachine.html">StateMachine</a> fsm(<span class="stringliteral">&quot;toggle switch&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    fsm.set_initial(off)</div>
@@ -390,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 5 2019 14:10:24 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Tue Mar 5 2019 17:56:43 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>

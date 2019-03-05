@@ -7,33 +7,37 @@
 using namespace std::chrono;
 using namespace elma;
 
-class Trigger : public Process {
-    public:
-    Trigger() : Process("trigger") {}
-    void init() {}
-    void start() {}
-    void update() { 
-        std::cout << "switch at " << milli_time() << "\n";
-        emit(Event("switch"));
-    }
-    void stop() {}
-};
+namespace toggle_switch_example {
 
-class Mode : public State {
-    public:
-    Mode(std::string name) : State(name) {}
-    void entry(const Event& e) {
-        std::cout << "entering " + name() << "\n";
-    }
-    void during() {}
-    void exit(const Event&) {}
-};
+    class Trigger : public Process {
+        public:
+        Trigger() : Process("trigger") {}
+        void init() {}
+        void start() {}
+        void update() { 
+            std::cout << "switch at " << milli_time() << "\n";
+            emit(Event("switch"));
+        }
+        void stop() {}
+    };
+
+    class Mode : public State {
+        public:
+        Mode(std::string name) : State(name) {}
+        void entry(const Event& e) {
+            std::cout << "entering " + name() << "\n";
+        }
+        void during() {}
+        void exit(const Event&) {}
+    };
+
+}
 
 int main() {
 
     Manager m;
-    Trigger trigger;
-    Mode off("off"), on("on");
+    toggle_switch_example::Trigger trigger;
+    toggle_switch_example::Mode off("off"), on("on");
     StateMachine fsm("toggle switch");
 
     fsm.set_initial(off)

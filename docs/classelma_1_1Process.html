@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classelma_1_1Process__inherit__graph.png" border="0" usemap="#elma_1_1Process_inherit__map" alt="Inheritance graph"/></div>
 <map name="elma_1_1Process_inherit__map" id="elma_1_1Process_inherit__map">
-<area shape="rect" id="node2" href="classCar.html" title="Car" alt="" coords="5,80,49,107"/><area shape="rect" id="node3" href="classCruiseControl.html" title="CruiseControl" alt="" coords="73,80,181,107"/><area shape="rect" id="node4" href="classDriver.html" title="Driver" alt="" coords="205,80,265,107"/><area shape="rect" id="node5" href="classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="289,80,440,107"/><area shape="rect" id="node6" href="classMyProcess.html" title="MyProcess" alt="" coords="465,80,555,107"/><area shape="rect" id="node7" href="classPower.html" title="Power" alt="" coords="580,80,640,107"/><area shape="rect" id="node8" href="classTrigger.html" title="Trigger" alt="" coords="665,80,729,107"/></map>
+<area shape="rect" id="node2" href="classbasic__example_1_1BasicProcess.html" title="Example: A very basic process class. See the file examples/basic.cc for usage. " alt="" coords="171,5,380,32"/><area shape="rect" id="node3" href="classdriving__example_1_1Car.html" title="Example: Another car simulation process. " alt="" coords="197,56,353,83"/><area shape="rect" id="node4" href="classdriving__example_1_1CruiseControl.html" title="Example: A cruise controller for a Car process. " alt="" coords="165,107,385,133"/><area shape="rect" id="node5" href="classdriving__example_1_1Driver.html" title="driving_example::Driver" alt="" coords="189,157,361,184"/><area shape="rect" id="node6" href="classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="200,208,351,235"/><area shape="rect" id="node7" href="classfeedback__example_1_1Car.html" title="Example: A car simulation process. " alt="" coords="189,259,361,285"/><area shape="rect" id="node8" href="classfeedback__example_1_1CruiseControl.html" title="Example: A cruise controller for a Car process. " alt="" coords="180,310,371,351"/><area shape="rect" id="node9" href="classmicrowave__example_1_1Power.html" title="microwave_example::\lPower" alt="" coords="195,375,355,417"/><area shape="rect" id="node10" href="classtoggle__switch__example_1_1Trigger.html" title="toggle_switch_example\l::Trigger" alt="" coords="190,441,361,482"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -185,26 +185,39 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span><a class="code" href="classMyProcess.html">MyProcess</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    <a class="code" href="classMyProcess.html">MyProcess</a>(std::string <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#aeaf53c300dbde2444bf7a5948b70a9f6">init</a>() {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#ae3ffee069f55704617740bdc0142aecc">start</a>() {}</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#a9731a2218270c49af835c606c09bd6c5">update</a>() { </div>
-<div class="line">        std::cout &lt;&lt; <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> </div>
-<div class="line">                &lt;&lt; <a class="code" href="classelma_1_1Process.html#a713075c26ec23e09576ec966fb4be6ea">milli_time</a>()</div>
-<div class="line">                &lt;&lt; <span class="stringliteral">&quot;ms\n&quot;</span>;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#a5aed57974a5acbe0d1f298584c91528e">stop</a>() {}</div>
-<div class="line">};</div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespacebasic__example.html">basic_example</a> {</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">class </span>BasicProcess : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line"></div>
+<div class="line">        BasicProcess(std::string <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#aeaf53c300dbde2444bf7a5948b70a9f6">init</a>() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#ae3ffee069f55704617740bdc0142aecc">start</a>() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#a9731a2218270c49af835c606c09bd6c5">update</a>() { </div>
+<div class="line">            std::cout &lt;&lt; <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> </div>
+<div class="line">                    &lt;&lt; <a class="code" href="classelma_1_1Process.html#a713075c26ec23e09576ec966fb4be6ea">milli_time</a>()</div>
+<div class="line">                    &lt;&lt; <span class="stringliteral">&quot;ms\n&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#a5aed57974a5acbe0d1f298584c91528e">stop</a>() {}</div>
+<div class="line">    };</div>
+<div class="line"></div>
+<div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
-<div class="line">    <a class="code" href="classMyProcess.html">MyProcess</a> p(<span class="stringliteral">&quot;A&quot;</span>), q(<span class="stringliteral">&quot;B&quot;</span>);</div>
-<div class="line">    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(p, 1_ms)</div>
-<div class="line">     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(q, 5_ms)</div>
-<div class="line">     .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()</div>
-<div class="line">     .<a class="code" href="classelma_1_1Manager.html#ad5df7316416ac9697d62e68e21f04758">run</a>(11_ms);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m; <span class="comment">// Make a manager</span></div>
+<div class="line">    <a class="code" href="classbasic__example_1_1BasicProcess.html">basic_example:: BasicProcess</a> p(<span class="stringliteral">&quot;A&quot;</span>), q(<span class="stringliteral">&quot;B&quot;</span>); <span class="comment">// Make two processes</span></div>
+<div class="line"></div>
+<div class="line">    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(p, 1_ms) <span class="comment">// Schedule the first to run every millisecond</span></div>
+<div class="line">     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(q, 5_ms) <span class="comment">// Schedule the second to run every 5 milliseconds</span></div>
+<div class="line">     .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()            <span class="comment">// Initialize the manager (which calls init for the processes)</span></div>
+<div class="line">     .<a class="code" href="classelma_1_1Manager.html#ad5df7316416ac9697d62e68e21f04758">run</a>(11_ms);       <span class="comment">// Run for 11 milliseconds</span></div>
+<div class="line">     </div>
 <div class="line">}</div>
 </div><!-- fragment --> 
 <p>Definition at line <a class="el" href="process_8h_source.html#l00024">24</a> of file <a class="el" href="process_8h_source.html">process.h</a>.</p>
@@ -329,7 +342,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Initialization method. This method should be overridden by derived classes. It will usually be called once, after all processes and communication objects have been added to the manager, but before the <a class="el" href="classelma_1_1Manager.html" title="The Process Manager class. ">Manager</a> starts running. </p>
 
-<p>Implemented in <a class="el" href="classDriver.html#a4c9a69e6620d74074275517d79e7db27">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">CruiseControl</a>, <a class="el" href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">CruiseControl</a>, <a class="el" href="classPower.html#a1d816422f2bc5a1d80893bcf449b6730">Power</a>, <a class="el" href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">Car</a>, <a class="el" href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">Car</a>, <a class="el" href="classMyProcess.html#aa09ab6ef883a5f26c437005ca41c984f">MyProcess</a>, and <a class="el" href="classTrigger.html#a80b79731eb3f5c372c084d82f223b3f0">Trigger</a>.</p>
+<p>Implemented in <a class="el" href="classdriving__example_1_1Driver.html#a6725229ac461ec373961f13fcbfc7522">driving_example::Driver</a>, <a class="el" href="classfeedback__example_1_1CruiseControl.html#ab16d2a37c784799f24e5ed74c055d248">feedback_example::CruiseControl</a>, <a class="el" href="classdriving__example_1_1CruiseControl.html#a2ccc8e176a52717fc404f6dab07a936f">driving_example::CruiseControl</a>, <a class="el" href="classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed">elma::StateMachine</a>, <a class="el" href="classbasic__example_1_1BasicProcess.html#a5138630dba00f218acb13f31f7d4532f">basic_example::BasicProcess</a>, <a class="el" href="classdriving__example_1_1Car.html#ab5928fa120c58d6eb5061e1e3e808880">driving_example::Car</a>, <a class="el" href="classfeedback__example_1_1Car.html#acbfab26e586e9046c3cad3f98921ebe5">feedback_example::Car</a>, <a class="el" href="classmicrowave__example_1_1Power.html#a5be95e217cffd39b17db594747016cde">microwave_example::Power</a>, and <a class="el" href="classtoggle__switch__example_1_1Trigger.html#a396d6aaaebf60a75e598f8cbfbf0aa5b">toggle_switch_example::Trigger</a>.</p>
 
 </div>
 </div>
@@ -505,7 +518,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Start method. This method should be overridden by derived classes. It will be called just before the manager starts running. It may be called multiple times, if the manager is started and stopped. </p>
 
-<p>Implemented in <a class="el" href="classDriver.html#aa99ad9f72f49515679480a27775a042c">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#a302e89347b025e658b806be343cd532a">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">CruiseControl</a>, <a class="el" href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">CruiseControl</a>, <a class="el" href="classPower.html#a7b9bce84f30ba70ecd17b33cc10c9b60">Power</a>, <a class="el" href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">Car</a>, <a class="el" href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">Car</a>, <a class="el" href="classMyProcess.html#aa01720aac945528380415ef77ad04e32">MyProcess</a>, and <a class="el" href="classTrigger.html#a69592181d9a720059653df02c752b62f">Trigger</a>.</p>
+<p>Implemented in <a class="el" href="classdriving__example_1_1Driver.html#ad8069e6a02df206e2e9b8cfababbf382">driving_example::Driver</a>, <a class="el" href="classdriving__example_1_1CruiseControl.html#a0e7b67d5b8d0cd8996315c88fb2683b4">driving_example::CruiseControl</a>, <a class="el" href="classfeedback__example_1_1CruiseControl.html#aa1bdeda45f37e2d9d8d0243e0cbe0a8e">feedback_example::CruiseControl</a>, <a class="el" href="classelma_1_1StateMachine.html#a302e89347b025e658b806be343cd532a">elma::StateMachine</a>, <a class="el" href="classdriving__example_1_1Car.html#a38a3ff004bca403f34c114de523484ed">driving_example::Car</a>, <a class="el" href="classfeedback__example_1_1Car.html#a8502e507b99e1d489405bec0af643176">feedback_example::Car</a>, <a class="el" href="classmicrowave__example_1_1Power.html#aa26fca3ffed3a34b71e8f55377c9f49f">microwave_example::Power</a>, <a class="el" href="classbasic__example_1_1BasicProcess.html#ae597a00726c51e7feff854f16d4886b2">basic_example::BasicProcess</a>, and <a class="el" href="classtoggle__switch__example_1_1Trigger.html#a662ae1c0e4274a88d13f2f20aa08e1c7">toggle_switch_example::Trigger</a>.</p>
 
 </div>
 </div>
@@ -583,7 +596,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Stop method. This method should be overridden by derived classes. It will be called just after the manager stops running. It may be called multiple times, if the manager is started and stopped. </p>
 
-<p>Implemented in <a class="el" href="classDriver.html#a7084b55d54b1b1d46974171948f89915">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#a57d866797c065ffe8ddfedd541bb77e1">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">CruiseControl</a>, <a class="el" href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">CruiseControl</a>, <a class="el" href="classPower.html#a321c34df052fe84b4af4193e1d1ba6f4">Power</a>, <a class="el" href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">Car</a>, <a class="el" href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">Car</a>, <a class="el" href="classMyProcess.html#a7c182f9bcc0fb9feb7c832f7f61563dc">MyProcess</a>, and <a class="el" href="classTrigger.html#ada5b43fbb351d49139da8b78d45e2a14">Trigger</a>.</p>
+<p>Implemented in <a class="el" href="classdriving__example_1_1Driver.html#a78b5b489d136113960bd6abbfd6e4fb6">driving_example::Driver</a>, <a class="el" href="classdriving__example_1_1CruiseControl.html#a2832d55ed533282b111c2c3abfa84349">driving_example::CruiseControl</a>, <a class="el" href="classfeedback__example_1_1CruiseControl.html#a78d896fa0a9426b59f5da8e62c5c7a34">feedback_example::CruiseControl</a>, <a class="el" href="classelma_1_1StateMachine.html#a57d866797c065ffe8ddfedd541bb77e1">elma::StateMachine</a>, <a class="el" href="classfeedback__example_1_1Car.html#a4758927180ebd1a39aa0125578c3a454">feedback_example::Car</a>, <a class="el" href="classdriving__example_1_1Car.html#a9ede9e9f44b7cfd4a69d4451e7d87767">driving_example::Car</a>, <a class="el" href="classbasic__example_1_1BasicProcess.html#a08fe736552a1c6b3f01d572d13bc4ca9">basic_example::BasicProcess</a>, <a class="el" href="classmicrowave__example_1_1Power.html#a3332df8b4806153592c34ce49527dc3d">microwave_example::Power</a>, and <a class="el" href="classtoggle__switch__example_1_1Trigger.html#abe5c1b247d3da7b4c6beea4d93a40270">toggle_switch_example::Trigger</a>.</p>
 
 </div>
 </div>
@@ -609,7 +622,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Update method. This method should be overridden by derived classes. It will be called repeatedly by the manager at a frequency determined by the period used when the process is scheduled with the <a class="el" href="classelma_1_1Manager.html" title="The Process Manager class. ">Manager</a> (see <a class="el" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">Manager::schedule</a>). </p>
 
-<p>Implemented in <a class="el" href="classDriver.html#a081f2232dc793f51f57eda183f52001b">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#ac319b67fdd0c1997e6807dbc5e310aef">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">CruiseControl</a>, <a class="el" href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">CruiseControl</a>, <a class="el" href="classPower.html#a6c1abf705bc2d0b83155b2202120834e">Power</a>, <a class="el" href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">Car</a>, <a class="el" href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">Car</a>, <a class="el" href="classMyProcess.html#a9fd6ac205987b826c185fbe8302cce4c">MyProcess</a>, and <a class="el" href="classTrigger.html#acf4027038f32f4c86bee3c243ddb38ab">Trigger</a>.</p>
+<p>Implemented in <a class="el" href="classdriving__example_1_1Driver.html#acdd60a3f2a57223cd91af3464f515351">driving_example::Driver</a>, <a class="el" href="classdriving__example_1_1CruiseControl.html#a0b6f94cc907bc5a2a9c0134b1b98904c">driving_example::CruiseControl</a>, <a class="el" href="classfeedback__example_1_1CruiseControl.html#aa12017b27ece87c10db6ed0449f972eb">feedback_example::CruiseControl</a>, <a class="el" href="classelma_1_1StateMachine.html#ac319b67fdd0c1997e6807dbc5e310aef">elma::StateMachine</a>, <a class="el" href="classdriving__example_1_1Car.html#a28a87f7ae12047c49990cac8a2b925d8">driving_example::Car</a>, <a class="el" href="classfeedback__example_1_1Car.html#a730754b1490a9e3668853b7ffbf41b1f">feedback_example::Car</a>, <a class="el" href="classmicrowave__example_1_1Power.html#ab2c36eb715a37f6c8d0dc9f4fa9c8bad">microwave_example::Power</a>, <a class="el" href="classbasic__example_1_1BasicProcess.html#a69c033d32c509410a734956ea44cadbf">basic_example::BasicProcess</a>, and <a class="el" href="classtoggle__switch__example_1_1Trigger.html#a38791323511c0174cfe4519dacd9ccf0">toggle_switch_example::Trigger</a>.</p>
 
 </div>
 </div>
@@ -621,7 +634,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 5 2019 14:10:24 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Tue Mar 5 2019 17:56:43 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>

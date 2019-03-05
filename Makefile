@@ -44,7 +44,7 @@ example:
 
 docs: docs/index.html
 
-docs/index.html: $(SOURCES) $(HEADERS) README.md docs.config dox/*
+docs/index.html: $(SOURCES) $(HEADERS) README.md docs.config dox/* examples/*.cc
 	$(DGEN) $(DGENCONFIG)
 	cp .nojekyll docs
 

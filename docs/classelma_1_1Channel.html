@@ -136,56 +136,76 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="keyword">using</span> std::vector;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span><a class="code" href="classCar.html">Car</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    <a class="code" href="classCar.html">Car</a>(std::string <a class="code" href="classelma_1_1Channel.html#acb13251d4dfd40980e2d73f24d8900ee">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
-<div class="line">    <span class="keywordtype">void</span> init() {}</div>
-<div class="line">    <span class="keywordtype">void</span> start() {</div>
-<div class="line">        velocity = 0;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> update() {</div>
-<div class="line">        <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Throttle&quot;</span>).<a class="code" href="classelma_1_1Channel.html#abe80362963b8fb50c05b52f7fe299fb0">nonempty</a>() ) {</div>
-<div class="line">            force = channel(<span class="stringliteral">&quot;Throttle&quot;</span>).latest();</div>
-<div class="line">        }</div>
-<div class="line">        velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m;</div>
-<div class="line">        channel(<span class="stringliteral">&quot;Velocity&quot;</span>).send(velocity);</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;t: &quot;</span>  &lt;&lt; milli_time() &lt;&lt; <span class="stringliteral">&quot; ms\t&quot;</span> </div>
-<div class="line">                &lt;&lt; <span class="stringliteral">&quot; u: &quot;</span> &lt;&lt; force        &lt;&lt; <span class="stringliteral">&quot; N\t&quot;</span></div>
-<div class="line">                &lt;&lt; <span class="stringliteral">&quot; v: &quot;</span> &lt;&lt; velocity     &lt;&lt; <span class="stringliteral">&quot; m/s\n&quot;</span>;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> stop() {}</div>
-<div class="line">    <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">double</span> velocity;</div>
-<div class="line">    <span class="keywordtype">double</span> force;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">double</span> k = 0.02;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">double</span> m = 1000;</div>
-<div class="line">};  </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespacefeedback__example.html">feedback_example</a> {</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span><a class="code" href="classCruiseControl.html">CruiseControl</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    <a class="code" href="classCruiseControl.html">CruiseControl</a>(std::string <a class="code" href="classelma_1_1Channel.html#acb13251d4dfd40980e2d73f24d8900ee">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
-<div class="line">    <span class="keywordtype">void</span> init() {}</div>
-<div class="line">    <span class="keywordtype">void</span> start() {}</div>
-<div class="line">    <span class="keywordtype">void</span> update() {</div>
-<div class="line">        <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Velocity&quot;</span>).<a class="code" href="classelma_1_1Channel.html#abe80362963b8fb50c05b52f7fe299fb0">nonempty</a>() ) {</div>
-<div class="line">            speed = channel(<span class="stringliteral">&quot;Velocity&quot;</span>).latest();</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">class </span>Car : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line"></div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line">        Car(std::string <a class="code" href="classelma_1_1Channel.html#acb13251d4dfd40980e2d73f24d8900ee">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> init() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> start() {</div>
+<div class="line">            velocity = 0;</div>
 <div class="line">        }</div>
-<div class="line">        channel(<span class="stringliteral">&quot;Throttle&quot;</span>).send(-KP*(speed - desired_speed));</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordtype">void</span> stop() {}</div>
-<div class="line">    <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">double</span> speed = 0;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">double</span> desired_speed = 50.0,</div>
-<div class="line">                    KP = 314.15;</div>
-<div class="line">                    vector&lt;double&gt; _v;</div>
-<div class="line">};   </div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> update() {</div>
+<div class="line">            <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Throttle&quot;</span>).<a class="code" href="classelma_1_1Channel.html#abe80362963b8fb50c05b52f7fe299fb0">nonempty</a>() ) {</div>
+<div class="line">                force = channel(<span class="stringliteral">&quot;Throttle&quot;</span>).latest();</div>
+<div class="line">            }</div>
+<div class="line">            velocity += ( delta() / 1000 ) * ( - k * velocity + force ) / m;</div>
+<div class="line">            channel(<span class="stringliteral">&quot;Velocity&quot;</span>).send(velocity);</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;t: &quot;</span>  &lt;&lt; milli_time() &lt;&lt; <span class="stringliteral">&quot; ms\t&quot;</span> </div>
+<div class="line">                    &lt;&lt; <span class="stringliteral">&quot; u: &quot;</span> &lt;&lt; force        &lt;&lt; <span class="stringliteral">&quot; N\t&quot;</span></div>
+<div class="line">                    &lt;&lt; <span class="stringliteral">&quot; v: &quot;</span> &lt;&lt; velocity     &lt;&lt; <span class="stringliteral">&quot; m/s\n&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> stop() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keyword">private</span>:</div>
+<div class="line">        <span class="keywordtype">double</span> velocity;</div>
+<div class="line">        <span class="keywordtype">double</span> force;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">double</span> k = 0.02;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">double</span> m = 1000;</div>
+<div class="line">    };  </div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">class </span>CruiseControl : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line"></div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line"></div>
+<div class="line">        CruiseControl(std::string <a class="code" href="classelma_1_1Channel.html#acb13251d4dfd40980e2d73f24d8900ee">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> init() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> start() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> update() {</div>
+<div class="line">            <span class="keywordflow">if</span> ( channel(<span class="stringliteral">&quot;Velocity&quot;</span>).<a class="code" href="classelma_1_1Channel.html#abe80362963b8fb50c05b52f7fe299fb0">nonempty</a>() ) {</div>
+<div class="line">                speed = channel(<span class="stringliteral">&quot;Velocity&quot;</span>).latest();</div>
+<div class="line">            }</div>
+<div class="line">            channel(<span class="stringliteral">&quot;Throttle&quot;</span>).send(-KP*(speed - desired_speed));</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordtype">void</span> stop() {}</div>
+<div class="line"></div>
+<div class="line">        <span class="keyword">private</span>:</div>
+<div class="line">        <span class="keywordtype">double</span> speed = 0;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">double</span> desired_speed = 50.0,</div>
+<div class="line">                        KP = 314.15;</div>
+<div class="line">                        vector&lt;double&gt; _v;</div>
+<div class="line"></div>
+<div class="line">    };   </div>
+<div class="line"></div>
+<div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line"></div>
 <div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="classCar.html">Car</a> car(<span class="stringliteral">&quot;Car&quot;</span>);</div>
-<div class="line">    <a class="code" href="classCruiseControl.html">CruiseControl</a> cc(<span class="stringliteral">&quot;Control&quot;</span>);</div>
+<div class="line">    <a class="code" href="classfeedback__example_1_1Car.html">feedback_example::Car</a> car(<span class="stringliteral">&quot;Car&quot;</span>);</div>
+<div class="line">    <a class="code" href="classfeedback__example_1_1CruiseControl.html">feedback_example::CruiseControl</a> cc(<span class="stringliteral">&quot;Control&quot;</span>);</div>
 <div class="line">    <a class="code" href="classelma_1_1Channel.html">Channel</a> throttle(<span class="stringliteral">&quot;Throttle&quot;</span>);</div>
 <div class="line">    <a class="code" href="classelma_1_1Channel.html">Channel</a> velocity(<span class="stringliteral">&quot;Velocity&quot;</span>);</div>
 <div class="line"></div>
@@ -493,7 +513,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 5 2019 14:10:23 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Tue Mar 5 2019 17:56:43 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>
