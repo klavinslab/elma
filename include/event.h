@@ -1,5 +1,5 @@
-#ifndef _EVENT_H
-#define _EVENT_H
+#ifndef _ELMA_EVENT_H
+#define _ELMA_EVENT_H
 
 #include <string>
 #include <vector>

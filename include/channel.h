@@ -1,5 +1,5 @@
-#ifndef CHANNEL_H
-#define CHANNEL_H
+#ifndef _ELMA_CHANNEL_H
+#define _ELMA_CHANNEL_H
 
 #include <string>
 #include <deque>

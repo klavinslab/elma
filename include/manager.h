@@ -1,5 +1,5 @@
-#ifndef MANAGER_H
-#define MANAGER_H
+#ifndef _ELMA_MANAGER_H
+#define _ELMA_MANAGER_H
 
 #include <vector>
 #include <map>

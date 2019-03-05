@@ -1,5 +1,5 @@
-#ifndef _LITERALS_H
-#define _LITERALS_H
+#ifndef _ELMA_LITERALS_H
+#define _ELMA_LITERALS_H
 
 #include <chrono>
 

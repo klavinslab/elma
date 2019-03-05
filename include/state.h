@@ -1,5 +1,5 @@
-#ifndef _STATE_H
-#define _STATE_H
+#ifndef _ELMA_STATE_H
+#define _ELMA_STATE_H
 
 #include <string>
 #include "elma.h"

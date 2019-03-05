@@ -1,5 +1,5 @@
-#ifndef PROCESS_H
-#define PROCESS_H
+#ifndef _ELMA_PROCESS_H
+#define _ELMA_PROCESS_H
 
 #include <string>
 #include <chrono>

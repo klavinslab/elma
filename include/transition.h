@@ -1,5 +1,5 @@
-#ifndef _TRANSITION_H
-#define _TRANSITION_H
+#ifndef _ELMA_TRANSITION_H
+#define _ELMA_TRANSITION_H
 
 #include <string>
 #include "elma.h"

@@ -1,5 +1,5 @@
-#ifndef _CLIENT_H
-#define _CLIENT_H
+#ifndef _ELMA_CLIENT_H
+#define _ELMA_CLIENT_H
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "httplib/httplib.h"

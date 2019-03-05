@@ -1,5 +1,5 @@
-#ifndef _EXCEPTIONS_H
-#define _EXCEPTIONS_H
+#ifndef _ELMA_EXCEPTIONS_H
+#define _ELMA_EXCEPTIONS_H
 
 #include <stdexcept>
 #include <string>

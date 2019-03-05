@@ -1,5 +1,5 @@
-#ifndef _STATE_MACHINE_H
-#define _STATE_MACHINE_H
+#ifndef _ELMA_STATE_MACHINE_H
+#define _ELMA_STATE_MACHINE_H
 
 #include "elma.h"
 
