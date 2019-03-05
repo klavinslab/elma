@@ -1,5 +1,7 @@
 #titlearea {
     padding: 16px;
+    background: rgb(27, 23, 109);
+    color: white;
 }
 
 #projectname {
@@ -10,7 +12,7 @@
 #projectbrief {
     margin-bottom: 8px;
     font-size: 24pt;
-    color: #777;
+    color: #ddd;
 }
 
 h1 {
