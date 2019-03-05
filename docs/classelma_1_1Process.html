@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classelma_1_1Process__inherit__graph.png" border="0" usemap="#elma_1_1Process_inherit__map" alt="Inheritance graph"/></div>
 <map name="elma_1_1Process_inherit__map" id="elma_1_1Process_inherit__map">
-<area shape="rect" id="node2" href="classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="5,80,156,107"/></map>
+<area shape="rect" id="node2" href="classCar.html" title="Car" alt="" coords="5,80,49,107"/><area shape="rect" id="node3" href="classCruiseControl.html" title="CruiseControl" alt="" coords="73,80,181,107"/><area shape="rect" id="node4" href="classDriver.html" title="Driver" alt="" coords="205,80,265,107"/><area shape="rect" id="node5" href="classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="289,80,440,107"/><area shape="rect" id="node6" href="classMyProcess.html" title="MyProcess" alt="" coords="465,80,555,107"/><area shape="rect" id="node7" href="classPower.html" title="Power" alt="" coords="580,80,640,107"/><area shape="rect" id="node8" href="classTrigger.html" title="Trigger" alt="" coords="665,80,729,107"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -185,9 +185,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd_1_1chrono.html">std::chrono</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceelma.html">elma</a>;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">class </span>MyProcess : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
+<div class="line"><span class="keyword">class </span><a class="code" href="classMyProcess.html">MyProcess</a> : <span class="keyword">public</span> <a class="code" href="classelma_1_1Process.html">Process</a> {</div>
 <div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    MyProcess(std::string <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
+<div class="line">    <a class="code" href="classMyProcess.html">MyProcess</a>(std::string <a class="code" href="classelma_1_1Process.html#a7ce946a55e71578bc1d33cf0a826c0de">name</a>) : <a class="code" href="classelma_1_1Process.html">Process</a>(name) {}</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#aeaf53c300dbde2444bf7a5948b70a9f6">init</a>() {}</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#ae3ffee069f55704617740bdc0142aecc">start</a>() {}</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code" href="classelma_1_1Process.html#a9731a2218270c49af835c606c09bd6c5">update</a>() { </div>
@@ -200,7 +200,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line">    <a class="code" href="classelma_1_1Manager.html">Manager</a> m;</div>
-<div class="line">    MyProcess p(<span class="stringliteral">&quot;A&quot;</span>), q(<span class="stringliteral">&quot;B&quot;</span>);</div>
+<div class="line">    <a class="code" href="classMyProcess.html">MyProcess</a> p(<span class="stringliteral">&quot;A&quot;</span>), q(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">    m.<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(p, 1_ms)</div>
 <div class="line">     .<a class="code" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a>(q, 5_ms)</div>
 <div class="line">     .<a class="code" href="classelma_1_1Manager.html#a457cd75094c043632a1443758f041090">init</a>()</div>
@@ -329,7 +329,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Initialization method. This method should be overridden by derived classes. It will usually be called once, after all processes and communication objects have been added to the manager, but before the <a class="el" href="classelma_1_1Manager.html" title="The Process Manager class. ">Manager</a> starts running. </p>
 
-<p>Implemented in <a class="el" href="classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed">elma::StateMachine</a>.</p>
+<p>Implemented in <a class="el" href="classDriver.html#a4c9a69e6620d74074275517d79e7db27">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">CruiseControl</a>, <a class="el" href="classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd">CruiseControl</a>, <a class="el" href="classPower.html#a1d816422f2bc5a1d80893bcf449b6730">Power</a>, <a class="el" href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">Car</a>, <a class="el" href="classCar.html#a3ea27fcc1913f1a055e09a652dba68d7">Car</a>, <a class="el" href="classMyProcess.html#aa09ab6ef883a5f26c437005ca41c984f">MyProcess</a>, and <a class="el" href="classTrigger.html#a80b79731eb3f5c372c084d82f223b3f0">Trigger</a>.</p>
 
 </div>
 </div>
@@ -505,7 +505,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Start method. This method should be overridden by derived classes. It will be called just before the manager starts running. It may be called multiple times, if the manager is started and stopped. </p>
 
-<p>Implemented in <a class="el" href="classelma_1_1StateMachine.html#a302e89347b025e658b806be343cd532a">elma::StateMachine</a>.</p>
+<p>Implemented in <a class="el" href="classDriver.html#aa99ad9f72f49515679480a27775a042c">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#a302e89347b025e658b806be343cd532a">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">CruiseControl</a>, <a class="el" href="classCruiseControl.html#a7f4be54015f0607cb95a09b8ed45055e">CruiseControl</a>, <a class="el" href="classPower.html#a7b9bce84f30ba70ecd17b33cc10c9b60">Power</a>, <a class="el" href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">Car</a>, <a class="el" href="classCar.html#a6451c4efaec7812fccec8bdb2a71bb9f">Car</a>, <a class="el" href="classMyProcess.html#aa01720aac945528380415ef77ad04e32">MyProcess</a>, and <a class="el" href="classTrigger.html#a69592181d9a720059653df02c752b62f">Trigger</a>.</p>
 
 </div>
 </div>
@@ -583,7 +583,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Stop method. This method should be overridden by derived classes. It will be called just after the manager stops running. It may be called multiple times, if the manager is started and stopped. </p>
 
-<p>Implemented in <a class="el" href="classelma_1_1StateMachine.html#a57d866797c065ffe8ddfedd541bb77e1">elma::StateMachine</a>.</p>
+<p>Implemented in <a class="el" href="classDriver.html#a7084b55d54b1b1d46974171948f89915">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#a57d866797c065ffe8ddfedd541bb77e1">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">CruiseControl</a>, <a class="el" href="classCruiseControl.html#a41a1e64d0f3c658019e1364b969b52e4">CruiseControl</a>, <a class="el" href="classPower.html#a321c34df052fe84b4af4193e1d1ba6f4">Power</a>, <a class="el" href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">Car</a>, <a class="el" href="classCar.html#ace6af67a1ee7108794a9d1470b5f0b7a">Car</a>, <a class="el" href="classMyProcess.html#a7c182f9bcc0fb9feb7c832f7f61563dc">MyProcess</a>, and <a class="el" href="classTrigger.html#ada5b43fbb351d49139da8b78d45e2a14">Trigger</a>.</p>
 
 </div>
 </div>
@@ -609,7 +609,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 </div><div class="memdoc">
 <p>Update method. This method should be overridden by derived classes. It will be called repeatedly by the manager at a frequency determined by the period used when the process is scheduled with the <a class="el" href="classelma_1_1Manager.html" title="The Process Manager class. ">Manager</a> (see <a class="el" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">Manager::schedule</a>). </p>
 
-<p>Implemented in <a class="el" href="classelma_1_1StateMachine.html#ac319b67fdd0c1997e6807dbc5e310aef">elma::StateMachine</a>.</p>
+<p>Implemented in <a class="el" href="classDriver.html#a081f2232dc793f51f57eda183f52001b">Driver</a>, <a class="el" href="classelma_1_1StateMachine.html#ac319b67fdd0c1997e6807dbc5e310aef">elma::StateMachine</a>, <a class="el" href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">CruiseControl</a>, <a class="el" href="classCruiseControl.html#a74d000560ca73a50fcd959c01faecf78">CruiseControl</a>, <a class="el" href="classPower.html#a6c1abf705bc2d0b83155b2202120834e">Power</a>, <a class="el" href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">Car</a>, <a class="el" href="classCar.html#a8c3bd55ec32a9d2dd71e10283b80db9a">Car</a>, <a class="el" href="classMyProcess.html#a9fd6ac205987b826c185fbe8302cce4c">MyProcess</a>, and <a class="el" href="classTrigger.html#acf4027038f32f4c86bee3c243ddb38ab">Trigger</a>.</p>
 
 </div>
 </div>
@@ -621,7 +621,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Manager</b></td></tr
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 5 2019 00:40:11 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Tue Mar 5 2019 14:10:24 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['get',['get',['../classelma_1_1Client.html#a6ff6393c0340293b95deb3e467e13d88',1,'elma::Client']]]
+  ['feedback_2ecc',['feedback.cc',['../feedback_8cc.html',1,'']]],
+  ['flush',['flush',['../classelma_1_1Channel.html#ad88b1d47f43aff5f332418cc58ded617',1,'elma::Channel']]]
 ];

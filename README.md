@@ -49,3 +49,8 @@ To install Elma without using Docker, you will need the following tools:
 Usage
 ===
 See the examples in the `examples` directory for how to build new event loops with Elma.
+
+License
+===
+
+This software is open source and uses the MIT license. Details can be found [here](https://github.com/klavinslab/elma).

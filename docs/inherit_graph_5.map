@@ -1,4 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node2" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="165,5,316,32"/>
+<area shape="rect" id="node1" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="5,157,117,184"/>
+<area shape="rect" id="node2" href="$classCar.html" title="Car" alt="" coords="219,5,263,32"/>
+<area shape="rect" id="node3" href="$classCruiseControl.html" title="CruiseControl" alt="" coords="187,56,295,83"/>
+<area shape="rect" id="node4" href="$classDriver.html" title="Driver" alt="" coords="211,107,271,133"/>
+<area shape="rect" id="node5" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="165,157,316,184"/>
+<area shape="rect" id="node6" href="$classMyProcess.html" title="MyProcess" alt="" coords="195,208,286,235"/>
+<area shape="rect" id="node7" href="$classPower.html" title="Power" alt="" coords="211,259,271,285"/>
+<area shape="rect" id="node8" href="$classTrigger.html" title="Trigger" alt="" coords="209,309,273,336"/>
 </map>

@@ -1,3 +1,9 @@
 <map id="elma::Process" name="elma::Process">
-<area shape="rect" id="node2" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node2" href="$classCar.html" title="Car" alt="" coords="5,80,49,107"/>
+<area shape="rect" id="node3" href="$classCruiseControl.html" title="CruiseControl" alt="" coords="73,80,181,107"/>
+<area shape="rect" id="node4" href="$classDriver.html" title="Driver" alt="" coords="205,80,265,107"/>
+<area shape="rect" id="node5" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="289,80,440,107"/>
+<area shape="rect" id="node6" href="$classMyProcess.html" title="MyProcess" alt="" coords="465,80,555,107"/>
+<area shape="rect" id="node7" href="$classPower.html" title="Power" alt="" coords="580,80,640,107"/>
+<area shape="rect" id="node8" href="$classTrigger.html" title="Trigger" alt="" coords="665,80,729,107"/>
 </map>

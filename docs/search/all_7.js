@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['last_5fupdate',['last_update',['../classelma_1_1Process.html#a809b1e38a5504600d252f8f62a8bf487',1,'elma::Process']]],
-  ['latest',['latest',['../classelma_1_1Channel.html#aa7b62180f748af0bb2c64aa834d8d077',1,'elma::Channel']]],
-  ['literals_2eh',['literals.h',['../literals_8h.html',1,'']]]
+  ['id',['id',['../classelma_1_1State.html#a1f0bad1c45494c2c3793b286ea201347',1,'elma::State']]],
+  ['init',['init',['../classelma_1_1Manager.html#a457cd75094c043632a1443758f041090',1,'elma::Manager::init()'],['../classelma_1_1Process.html#aeaf53c300dbde2444bf7a5948b70a9f6',1,'elma::Process::init()'],['../classelma_1_1StateMachine.html#a4c03e19874ce1a4bed123120d31bf7ed',1,'elma::StateMachine::init()'],['../classMyProcess.html#aa09ab6ef883a5f26c437005ca41c984f',1,'MyProcess::init()'],['../classCar.html#a3ea27fcc1913f1a055e09a652dba68d7',1,'Car::init()'],['../classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd',1,'CruiseControl::init()'],['../classDriver.html#a4c9a69e6620d74074275517d79e7db27',1,'Driver::init()'],['../classCar.html#a3ea27fcc1913f1a055e09a652dba68d7',1,'Car::init()'],['../classCruiseControl.html#abbed1ba1348a438620359719d3ea05bd',1,'CruiseControl::init()'],['../classPower.html#a1d816422f2bc5a1d80893bcf449b6730',1,'Power::init()'],['../classTrigger.html#a80b79731eb3f5c372c084d82f223b3f0',1,'Trigger::init()']]]
 ];

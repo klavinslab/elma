@@ -1,5 +1,5 @@
 <map id="include/literals.h" name="include/literals.h">
-<area shape="rect" id="node2" href="$elma_8h_source.html" title="include/elma.h" alt="" coords="1085,80,1199,107"/>
+<area shape="rect" id="node2" href="$elma_8h_source.html" title="include/elma.h" alt="" coords="1321,80,1435,107"/>
 <area shape="rect" id="node3" href="$channel_8cc_source.html" title="src/channel.cc" alt="" coords="5,155,119,181"/>
 <area shape="rect" id="node4" href="$client_8cc_source.html" title="src/client.cc" alt="" coords="143,155,240,181"/>
 <area shape="rect" id="node5" href="$manager_8cc_source.html" title="src/manager.cc" alt="" coords="265,155,385,181"/>
@@ -13,4 +13,9 @@
 <area shape="rect" id="node13" href="$state_8h_source.html" title="include/state.h" alt="" coords="1472,155,1588,181"/>
 <area shape="rect" id="node14" href="$transition_8h_source.html" title="include/transition.h" alt="" coords="1612,155,1755,181"/>
 <area shape="rect" id="node15" href="$state__machine_8h_source.html" title="include/state_machine.h" alt="" coords="1779,155,1958,181"/>
+<area shape="rect" id="node16" href="$basic_8cc.html" title="examples/basic.cc" alt="" coords="1982,155,2121,181"/>
+<area shape="rect" id="node17" href="$driving_8cc.html" title="examples/driving.cc" alt="" coords="2145,155,2293,181"/>
+<area shape="rect" id="node18" href="$feedback_8cc.html" title="examples/feedback.cc" alt="" coords="2317,155,2481,181"/>
+<area shape="rect" id="node19" href="$microwave_8cc.html" title="examples/microwave.cc" alt="" coords="2505,155,2680,181"/>
+<area shape="rect" id="node20" href="$toggle-switch_8cc.html" title="examples/toggle&#45;switch.cc" alt="" coords="2704,155,2895,181"/>
 </map>
