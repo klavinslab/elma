@@ -10,7 +10,7 @@ using namespace elma;
 
 namespace driving_example {
 
-    //! Example: Another car simulation process.
+    //! Example: Another car simulation process. See examples/driving.cc.
 
     //! See the file examples/driving.cc for usage.
     class Car : public Process {
@@ -53,7 +53,7 @@ namespace driving_example {
         const double m = 1000;
     };  
 
-    //! Example: A cruise controller for a Car process
+    //! Example: A cruise controller for a Car process.  See examples/driving.cc.
 
     //! See the file examples/driving.cc for usage.
     class CruiseControl : public Process {
@@ -94,8 +94,7 @@ namespace driving_example {
                     vector<double> _v;
     };
 
-    //! Example: A simulated driver, who keeps cycling between
-    //! 50 and 60 kph.
+    //! Example: A simulated driver, who keeps cycling between 50 and 60 kph.  See examples/driving.cc.
     class Driver : public Process {
 
         public: 

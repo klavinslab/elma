@@ -10,7 +10,7 @@ using namespace elma;
 
 namespace feedback_example {
 
-    //! Example: A car simulation process.
+    //! Example: A car simulation process. See examples/feedback.cc.
 
     //! See the file examples/feedback.cc for usage.
     class Car : public Process {
@@ -54,7 +54,7 @@ namespace feedback_example {
         const double m = 1000;
     };  
 
-    //! Example: A cruise controller for a Car process
+    //! Example: A cruise controller for a Car process. See examples/feedback.cc.
 
     //! See the file examples/feedback.cc for usage.
     class CruiseControl : public Process {
