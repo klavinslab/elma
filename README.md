@@ -25,7 +25,7 @@ To get started, you will need a C++ build environment. We have provided one with
 From the Dockerfile
 ---
 
-You can also build the docker environment, described in env/Dockerfile, yourself with the following commands:
+You can also build the docker environment, described in env/Dockerfile, yourself, with the following commands:
 
     git clone https://github.com/klavinslab/elma.git
     cd elma
@@ -38,7 +38,7 @@ You can also build the docker environment, described in env/Dockerfile, yourself
 Manual Installation
 ---
 
-To install Elma without using Docker, you will need the following tools:
+To install Elma without using Docker, you will need to install the following tools:
 - [gcc](https://gcc.gnu.org/) 4.9 or an equivalent C/C++ compiler that supports at least C++14
 - Make (if you want to use the makefile. Alternatively, you can use some other build manager)
 - [Doxygen](http://www.doxygen.nl/)
