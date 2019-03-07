@@ -16,6 +16,10 @@ namespace elma {
         _processes.push_back(&process); 
         process._manager_ptr = this;            
 
+        if (-5 > process._priority || process._priority > 15 ){
+            throw Exception("Priority must be between -5(low priority) and 15(high priority)");
+        }    
+
         return *this;
 
     }
@@ -90,6 +94,7 @@ namespace elma {
     //! Initialize all processes. Usually called before run()
     //! \return A reference to the manager, for chaining
     Manager& Manager::init() {
+        SortProcess();  
         return all([](Process& p) { p._init();});
     }
 
@@ -114,6 +119,44 @@ namespace elma {
                 p._update(_elapsed);
             }
         });
+    }
+
+    //! sort _Processes based on _priority to ensure higher priority process are updated first.
+    //! \return A reference to the manager, for chaining
+    Manager& Manager::SortProcess() {
+
+        std::sort(_processes.begin(), _processes.end(),[](const Process * lhs, const Process * rhs){
+            return lhs->_priority > rhs->_priority;
+        });  
+
+        return *this;
+    }
+    
+    //! Set Process Priority and sort _Processes to ensure higher priority are updated first. 
+    //! Priority may be set -5 (low priority) to 15 (high priority)
+    //! This should allow priority adjustment while running.
+    //! \param name The name of the process you want to adjust priority level.
+    //! \param priority, a integer between -5 and 15 
+    //! \return A reference to the manager, for chaining
+    Manager& Manager::SetPriority(string name, int priority) {
+
+    if (-5 <= priority && priority <= 15 ){
+        //Find process to adjust
+        auto it = std::find_if(_processes.begin(), _processes.end(), [name](const Process * n) {
+            return n->_name == name;
+        });
+
+        if (it != _processes.end()) {
+            (*it)->_priority = priority;
+            SortProcess();
+        }else{
+            throw Exception("Tried to access an unregistered or non-existant process.");
+        }
+    }else{
+        throw Exception("Priority must be between -5(low priority) and 15(high priority)");
+    }    
+ 
+        return *this;
     }
 
     //! Run the manager for the specified amount of time.
