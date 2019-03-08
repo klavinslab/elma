@@ -33,8 +33,8 @@ namespace elma {
         Manager& schedule(Process& process, high_resolution_clock::duration period);
         Manager& all(std::function<void(Process&)> f);
 
-        Manager& SetPriority(string name, int priority);
-        Manager& SortProcess();
+        Manager& set_priority(Process& process, int priority);
+        Manager& sort_processes();
 
         Manager& init();
         Manager& start();

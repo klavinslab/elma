@@ -73,7 +73,72 @@ namespace {
         
     }
 
-    TEST(Priority, NoProcess) {
+        TEST(Priority, SetPriorityMethod) {
+
+        static vector<string> test1;
+        static vector<string> ans1 = {"lilly", "boby", "james", "lilly", "boby", "james", "lilly", "boby", "james" };
+        
+        class  Tester: public elma::Process {
+        public: 
+            Tester(string name, int n = 0) : Process(name, n) {}
+            void init() {}
+            void start() {}
+            void update() {
+                test1.push_back("james");
+                //std::cout << "james" << "\n";
+            }
+            void stop() {}
+
+        };
+
+        class  Tester2: public elma::Process {
+        public: 
+            Tester2(string name, int n = 0) : Process(name, n) {}
+            void init() {}
+            void start() {}
+            void update() {
+                test1.push_back("lilly");
+                //std::cout << "lilly" << "\n";
+            }
+            void stop() {}
+
+        };
+
+        class  Tester3: public elma::Process {
+        public: 
+            Tester3(string name, int n = 0) : Process(name, n) {}
+            void init() {}
+            void start() {}
+            void update() {
+                test1.push_back("boby");
+                //std::cout << "boby" << "\n";
+            }
+            void stop() {}
+
+        };
+
+        
+    
+        elma::Manager m;
+        Tester james("james");
+        Tester2 lily("lily");
+        Tester3 boby("boby");
+
+        m.schedule(james, MS(30))
+        .schedule(lily, MS(30))
+        .schedule(boby, MS(30));
+
+        m.set_priority(james, 0);
+        m.set_priority(lily, 2);
+        m.set_priority(boby, 1);
+
+        m.init().run(MS(100));
+        EXPECT_EQ(test1, ans1);
+        
+    }
+
+    //This is no longer valid now that the process is passed not its name
+   /* TEST(Priority, NoProcess) {
 
              
         class  Tester: public elma::Process {
@@ -91,8 +156,8 @@ namespace {
   
 
         m.schedule(james, MS(30));
-        EXPECT_ANY_THROW(m.SetPriority("jams", 3));        
-    }
+        //EXPECT_ANY_THROW(m.set_priority("jams", 3));        
+    }*/
 
     TEST(Priority, LookSort) {
 
@@ -180,7 +245,7 @@ namespace {
         Tester james("james",19);
         EXPECT_ANY_THROW( m.schedule(james, MS(30)));
         Tester bob("bob");
-        EXPECT_ANY_THROW(m.SetPriority("bob", 23)); 
+        EXPECT_ANY_THROW(m.set_priority(bob, 23)); 
     }
 
 }
