@@ -18,7 +18,7 @@ To get started, you will need a C++ build environment. We have provided one with
 
     git clone https://github.com/klavinslab/elma.git
     cd elma
-    docker run -v $PWD:/source -it klavins/ecep520:elma bash
+    docker run -v $PWD:/source -it klavins/elma:latest bash
     make
     examples/bin/basic
 
@@ -29,11 +29,10 @@ You can also build the docker environment, described in env/Dockerfile, yourself
 
     git clone https://github.com/klavinslab/elma.git
     cd elma
-    docker build -t myelma env
+    docker build -t myelma .
     docker run -v $PWD:/source -it myelma bash
     make
     examples/bin/basic
-
 
 Manual Installation
 ---

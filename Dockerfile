@@ -1,7 +1,7 @@
 #
 # To use this image to compile C and C++ projects on to of Elma, do something like
-# docker build -t elma env
-# docker run -v $PWD:/source -it env bash
+# docker build -t elma .
+# docker run -v $PWD:/source -it elma bash
 #
 
 # Get the GCC preinstalled image from Docker Hub
@@ -36,6 +36,12 @@ RUN mkdir /usr/local/include/httplib
 RUN mv /tmp/cpp-httplib/httplib.h /usr/local/include/httplib
 RUN rm -r /tmp/cpp-httplib
 EXPOSE 8080
+
+# Install elma tests
+RUN mkdir /usr/src/elma
+COPY . /usr/src/elma
+WORKDIR /usr/src/elma
+RUN make
 
 WORKDIR /source
 

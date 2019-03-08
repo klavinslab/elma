@@ -1,0 +1,3 @@
+sut:
+  build: .
+  command: /usr/src/elma/test/bin/test

@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Elma Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Elma is an event loop and process manager for embedded systems. Elma is structured as a C++ library of classes on top of which you build your own C++ project. It keeps track of processes, finite state machines, events, and communication channels, executing them at specified frequencies. Elma was developed as part of the University of Washington's <a href="https://github.com/klavins/ECEP520">ECE P 520 course</a> on advanced embedded systems programming. More information on how Elma was designed can be found in the links below:</p><ul>
+<div class="textblock"><p>Elma is an event loop and process manager for embedded and reactive systems. Elma is structured as a C++ library of classes on top of which you build your own C++ project. It keeps track of processes, finite state machines, events, and communication channels, executing them at specified frequencies. Elma was developed as part of the University of Washington's <a href="https://github.com/klavins/ECEP520">ECE P 520 course</a> on advanced embedded systems programming. More information on how Elma was designed can be found in the links below:</p><ul>
 <li><a href="https://github.com/klavins/ECEP520/tree/master/week_6">Event loop management</a></li>
 <li><a href="https://github.com/klavins/ECEP520/tree/master/week_7">Events and finite state machines</a></li>
 <li><a href="https://github.com/klavins/ECEP520/blob/master/week_8">HTTP in event loops</a></li>
@@ -87,20 +87,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Installation </h1>
 <p>The source code for Elma <a href="https://github.com/klavinslab/elma">is on Github</a>.</p>
 <h2>From Dockerhub </h2>
-<p>To get started, you need a C++ build environment. We have provided one with the Docker container <code>elma</code>, which you can use as follows: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
+<p>To get started, you will need a C++ build environment. We have provided one with the Docker container <code>elma</code>, which you can use as follows: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
 cd elma
-docker run -v $PWD:/source -it klavins/ecep520:elma bash
+docker run -v $PWD:/source -it klavins/elma:latest bash
 make
 examples/bin/basic
 </pre><h2>From the Dockerfile </h2>
-<p>You can also build the docker environment, described in env/Dockerfile, yourself with the following commands: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
+<p>You can also build the docker environment, described in env/Dockerfile, yourself, with the following commands: </p><pre class="fragment">git clone https://github.com/klavinslab/elma.git
 cd elma
-docker build -t myelma env
+docker build -t myelma .
 docker run -v $PWD:/source -it myelma bash
 make
 examples/bin/basic
 </pre><h2>Manual Installation </h2>
-<p>To install Elma without using Docker, you will need the following tools:</p><ul>
+<p>To install Elma without using Docker, you will need to install the following tools:</p><ul>
 <li><a href="https://gcc.gnu.org/">gcc</a> 4.9 or an equivalent C/C++ compiler that supports at least C++14</li>
 <li>Make (if you want to use the makefile. Alternatively, you can use some other build manager)</li>
 <li><a href="http://www.doxygen.nl/">Doxygen</a></li>
@@ -116,7 +116,7 @@ examples/bin/basic
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 5 2019 21:55:44 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Fri Mar 8 2019 17:39:23 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>
