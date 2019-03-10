@@ -92,6 +92,12 @@ Now you should be ready to install elma:
     cd elma
     make
 
+Note that the Makefile should detect if you are on a pi by using the command
+
+    uname -m
+
+which on a pi 3 model B+ returns 'armv71'. If your pi is different, you might need to change the ifeq statments in `test/Makefile` and `examples/Makefile`.
+
 Usage
 ===
 See the examples in the `examples` directory for how to build new event loops with Elma.
