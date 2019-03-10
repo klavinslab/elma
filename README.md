@@ -45,6 +45,53 @@ To install Elma without using Docker, you will need to install the following too
 - Neils Lohmann's JSON library: https://github.com/nlohmann/json
 - [My fork](https://github.com/klavins/cpp-httplib.git) of [yhirose](https://github.com/yhirose)'s HTTP library
 
+Installation on Raspbian
+---
+
+First install required packages available through apt-get
+
+    sudo apt-get update
+    sudo apt-get install -y cmake
+    sudo apt-get install -y cppcheck
+    sudo apt-get install -y graphviz
+    sudo apt-get install -y doxygen
+    sudo apt-get install -y cmake
+    sudo apt-get install -y libssl-dev
+
+Next, install Google Test
+
+    cd /usr/src
+    sudo git clone https://github.com/google/googletest.git
+    cd googletest
+    sudo mkdir install
+    cd install
+    sudo cmake ../
+    sudo make
+    sudo make install
+
+Next, install the json library
+
+    sudo mkdir /usr/local/include/json
+    cd /usr/local/include/json
+    sudo curl -O -J -L https://github.com/nlohmann/json/releases/download/v3.5.0/json.hpp
+    sudo mv json.hpp json.h
+
+Next, install httplib
+
+    cd /tmp
+    git clone https://github.com/klavins/cpp-httplib.git
+    sudo mkdir /usr/local/include/httplib
+    sudo mv /tmp/cpp-httplib/httplib.h /usr/local/include/httplib
+
+Now you should be ready to install elma:
+
+    cd ~
+    mkdir Code
+    cd Code
+    git clone https://github.com/klavinslab/elma.git
+    cd elma
+    make
+
 Usage
 ===
 See the examples in the `examples` directory for how to build new event loops with Elma.
