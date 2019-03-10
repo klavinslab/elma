@@ -16,7 +16,7 @@ namespace elma {
         _processes.push_back(&process); 
         process._manager_ptr = this;            
 
-        if (-5 > process._priority || process._priority > 15 ){
+        if (Priority_min > process._priority || process._priority > Priority_max ){
             throw Exception("Priority must be between -5(low priority) and 15(high priority)");
         }    
 
@@ -140,7 +140,7 @@ namespace elma {
     //! \return A reference to the manager, for chaining
     Manager& Manager::set_priority(Process& process, int priority) {
 
-    if (-5 <= priority && priority <= 15 ){
+    if (Priority_min <= priority && priority <= Priority_max  ){
         process._priority = priority;
         sort_processes();
     }else{

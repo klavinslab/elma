@@ -61,6 +61,7 @@ namespace elma {
         Client& client() { return _client; }
 
         private:
+        const int Priority_min = -5, Priority_max = 15;
         vector<Process *> _processes;
         map<string, Channel *> _channels;
         map<string, vector<std::function<void(Event&)>>> event_handlers;

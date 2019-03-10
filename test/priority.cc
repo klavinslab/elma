@@ -12,6 +12,8 @@ namespace {
     #define SLEEP(__ms__) std::this_thread::sleep_for(std::chrono::milliseconds(__ms__))
     #define MS(__ms__) high_resolution_clock::duration(milliseconds(__ms__))
 
+    const int Priority_min = -5, Priority_max = 15;
+
     TEST(Priority, basic) {
 
         static vector<string> test1;
@@ -24,7 +26,6 @@ namespace {
             void start() {}
             void update() {
                 test1.push_back("james");
-                //std::cout << "james" << "\n";
             }
             void stop() {}
 
@@ -37,7 +38,6 @@ namespace {
             void start() {}
             void update() {
                 test1.push_back("lilly");
-                //std::cout << "lilly" << "\n";
             }
             void stop() {}
 
@@ -50,7 +50,6 @@ namespace {
             void start() {}
             void update() {
                 test1.push_back("boby");
-                //std::cout << "boby" << "\n";
             }
             void stop() {}
 
@@ -67,7 +66,6 @@ namespace {
         .schedule(lily, MS(30))
         .schedule(boby, MS(30));
 
-        //m.SetPriority("james", 3);
         m.init().run(MS(100));
         EXPECT_EQ(test1, ans1);
         
@@ -85,7 +83,6 @@ namespace {
             void start() {}
             void update() {
                 test1.push_back("james");
-                //std::cout << "james" << "\n";
             }
             void stop() {}
 
@@ -98,7 +95,6 @@ namespace {
             void start() {}
             void update() {
                 test1.push_back("lilly");
-                //std::cout << "lilly" << "\n";
             }
             void stop() {}
 
@@ -111,7 +107,6 @@ namespace {
             void start() {}
             void update() {
                 test1.push_back("boby");
-                //std::cout << "boby" << "\n";
             }
             void stop() {}
 
@@ -137,10 +132,9 @@ namespace {
         
     }
 
-    //This is no longer valid now that the process is passed not its name
-   /* TEST(Priority, NoProcess) {
 
-             
+    TEST(Priority, LookSort) {
+
         class  Tester: public elma::Process {
         public: 
             Tester(string name, int n = 0) : Process(name, n) {}
@@ -150,39 +144,13 @@ namespace {
             void stop() {}
 
         };
-   
-        elma::Manager m;
-        Tester james("james",0);
-  
-
-        m.schedule(james, MS(30));
-        //EXPECT_ANY_THROW(m.set_priority("jams", 3));        
-    }*/
-
-    TEST(Priority, LookSort) {
-
-        class  Tester: public elma::Process {
-        public: 
-            Tester(string name, int n = 0) : Process(name, n) {}
-            void init() {}
-            void start() {}
-            void update() {
-                //test1.push_back("james");
-                //std::cout << "james" << "\n";
-            }
-            void stop() {}
-
-        };
 
         class  Tester2: public elma::Process {
         public: 
             Tester2(string name, int n = 0) : Process(name, n) {}
             void init() {}
             void start() {}
-            void update() {
-                //test1.push_back("lilly");
-                //std::cout << "lilly" << "\n";
-            }
+            void update() {}
             void stop() {}
 
         };
@@ -192,10 +160,7 @@ namespace {
             Tester3(string name, int n = 0) : Process(name, n) {}
             void init() {}
             void start() {}
-            void update() {
-                //test1.push_back("boby");
-                //std::cout << "boby" << "\n";
-            }
+            void update() {}
             void stop() {}
 
         };
