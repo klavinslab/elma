@@ -1,5 +1,8 @@
+#Architecture
+ARCH := $(shell uname -m)
+
 #Compilers
-CC          := g++ -std=c++14
+CC          := g++ -std=c++14 -Wno-psabi
 DGEN        := doxygen
 
 #The Target Binary Program
@@ -12,9 +15,16 @@ BUILDDIR    := ./build
 TARGETDIR   := ./bin
 SRCEXT      := cc
 
+#Asan library
+ifeq ($(ARCH),armv7l)
+	ASAN := -static-libasan
+else
+	ASAN := -lasan
+endif
+
 #Flags, Libraries and Includes
 CFLAGS      := -fsanitize=address -ggdb
-LIB         := -L../lib -lgtest -lpthread -lasan -lelma -lssl -lcrypto
+LIB         := -L../lib -lgtest -lpthread $(ASAN) -lelma -lssl -lcrypto
 INC         := -I$(INCDIR)
 INCDEP      := -I$(INCDIR)
 ELMALIB		:= ../lib/libelma.a

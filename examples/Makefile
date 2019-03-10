@@ -1,14 +1,24 @@
+#Architecture
+ARCH := $(shell uname -m)
+
 #Compilers
-CC          := g++ -std=c++14
+CC          := g++ -std=c++14 -Wno-psabi
 
 #The Target Library
 
 #The Directories, Source, Includes, Objects, Binary and Resources
 SRCEXT      := cc
 
+#Asan library
+ifeq ($(ARCH),armv7l)
+	ASAN := -static-libasan
+else
+	ASAN := -lasan
+endif
+
 #Flags, Libraries and Includes
 CFLAGS      := -fsanitize=address -ggdb
-LIB         := -lgtest -lpthread -lasan -lelma -lssl -lcrypto
+LIB         := -lgtest -lpthread $(ASAN) -lelma -lssl -lcrypto
 INCLUDE		:= -I../include
 LIBDIR		:= -L../lib
 ELMALIB		:= ../lib/libelma.a
