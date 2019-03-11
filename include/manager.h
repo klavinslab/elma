@@ -33,6 +33,9 @@ namespace elma {
         Manager& schedule(Process& process, high_resolution_clock::duration period);
         Manager& all(std::function<void(Process&)> f);
 
+        Manager& set_priority(Process& process, int priority);
+        Manager& sort_processes();
+
         Manager& init();
         Manager& start();
         Manager& update();        
@@ -58,6 +61,7 @@ namespace elma {
         Client& client() { return _client; }
 
         private:
+        const int Priority_min = -5, Priority_max = 15;
         vector<Process *> _processes;
         map<string, Channel *> _channels;
         map<string, vector<std::function<void(Event&)>>> event_handlers;

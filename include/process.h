@@ -32,13 +32,13 @@ namespace elma {
         typedef enum { UNINITIALIZED, STOPPED, RUNNING } status_type;
 
         //! Default constructor. Names process "no name"
-        Process() : _name("unnamed process"), _status(UNINITIALIZED), _manager_ptr(NULL) {}
+        Process(int n = 0) : _name("unnamed process"), _status(UNINITIALIZED), _manager_ptr(NULL), _priority(n) {}
 
         //! Constructor that takes a name for the process
         /*!
           \param name The name of the process
         */
-        Process(std::string name) : _name(name), _status(UNINITIALIZED), _manager_ptr(NULL) {}
+        Process(std::string name, int n = 0) : _name(name), _status(UNINITIALIZED), _manager_ptr(NULL), _priority(n) {}
         virtual ~Process() = default;
 
         // Interface for derived classes
@@ -122,7 +122,7 @@ namespace elma {
                                         _previous_update, // duration from start to update before last
                                         _last_update;     // duration from start to last update
         time_point<high_resolution_clock> _start_time;    // time of most recent start
-        int _num_updates;                                 // number of times update() has been called
+        int _num_updates, _priority;                      // number of times update() has been called
         Manager * _manager_ptr;                           // a pointer to the manager        
 
     };
