@@ -138,7 +138,9 @@ cd Code
 git clone https://github.com/klavinslab/elma.git
 cd elma
 make
-</pre><h1>Usage </h1>
+</pre><p>Note that the Makefile should detect if you are on a pi by using the command </p><pre class="fragment">uname -m
+</pre><p>which on a pi 3 model B+ returns 'armv71'. If your pi is different, you might need to change the ifeq statments in <code>test/Makefile</code> and <code>examples/Makefile</code>.</p>
+<h1>Usage </h1>
 <p>See the examples in the <code>examples</code> directory for how to build new event loops with Elma.</p>
 <h1>License </h1>
 <p>This software is open source and uses the MIT license. Details can be found <a href="https://github.com/klavinslab/elma">here</a>. </p>
@@ -146,7 +148,7 @@ make
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Sun Mar 10 2019 16:17:07 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Mon Mar 11 2019 00:40:19 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>
