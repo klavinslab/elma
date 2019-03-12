@@ -101,12 +101,14 @@ namespace elma {
     //! Start all processes. Usually not called directly.
     //! \return A reference to the manager, for chaining
     Manager& Manager::start() {
+        _running = true;
         return all([this](Process& p) { p._start(_elapsed) ;});
     }    
 
     //! Stop all processes. Usually not called directly.
     //! \return A reference to the manager, for chaining
     Manager& Manager::stop() {
+        _running  = false;
         return all([](Process& p) { p._stop(); });
     }    
 
@@ -143,7 +145,7 @@ namespace elma {
     if (Priority_min <= priority && priority <= Priority_max  ){
         process._priority = priority;
         sort_processes();
-    }else{
+    } else {
         throw Exception("Priority must be between -5(low priority) and 15(high priority)");
     }    
         return *this;
@@ -168,5 +170,23 @@ namespace elma {
         return *this;
 
     }
+
+    //! Run the manager indefinitely or until a process calls halt().
+    //! \return A reference to the manager, for chaining
+    Manager& Manager::run() {
+
+        _start_time = high_resolution_clock::now();
+        _elapsed = high_resolution_clock::duration::zero();
+        start();        
+
+        while ( _running ) {
+            update();
+            _elapsed = high_resolution_clock::now() - _start_time;
+        }
+
+        return *this;
+
+    }
+
 
 }

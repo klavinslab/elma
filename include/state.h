@@ -53,6 +53,9 @@ namespace elma {
         //! \param e The event to emit
         void emit(const Event& e);
 
+        //! \return Get a reference to the parent state machine.
+        StateMachine& state_machine() { return *_state_machine_ptr; }
+
         private:
         std::string _name;
         int _id;

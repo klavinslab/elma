@@ -84,4 +84,6 @@ namespace elma {
         stop();
     }       
 
+    void Process::halt() { _manager_ptr->stop(); }    
+
 }

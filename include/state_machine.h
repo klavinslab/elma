@@ -41,13 +41,13 @@ namespace elma {
         State& current() { return *_current; }
 
         //! Do not override init() for a state machine.
-        void init();
+        void init() final;
 
         //! Do not override init() for a state machine.        
-        void start();
+        void start() final;
 
         //! Do not override init() for a state machine.        
-        void update();
+        void update() final;
 
         //! Do not override init() for a state machine.        
         void stop();

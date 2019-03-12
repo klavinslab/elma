@@ -107,6 +107,8 @@ namespace elma {
 
         void http_get(std::string url, std::function<void(json&)> handler);
 
+        void halt();
+
         private:
 
         // Manager interface

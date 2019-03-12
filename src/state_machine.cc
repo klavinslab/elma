@@ -1,4 +1,3 @@
-#include <iostream>
 #include "elma.h"
 
 namespace elma {
@@ -41,6 +40,9 @@ namespace elma {
     }
 
     void StateMachine::update() {
+        if ( _current == NULL ) {
+            throw(Exception("State machine updated without a valid current state (call set_initial(...) first)"));
+        }
         _current->during();
     }
 

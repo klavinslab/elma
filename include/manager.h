@@ -28,7 +28,7 @@ namespace elma {
         public: 
 
         //! Default constructor
-        Manager() {}
+        Manager() : _running(false) {}
         
         Manager& schedule(Process& process, high_resolution_clock::duration period);
         Manager& all(std::function<void(Process&)> f);
@@ -42,6 +42,7 @@ namespace elma {
         Manager& stop();
 
         Manager& run(high_resolution_clock::duration);
+        Manager& run();
 
         //! Getter
         //! \return The time the Manager was most recently started
@@ -68,6 +69,7 @@ namespace elma {
         high_resolution_clock::time_point _start_time;
         high_resolution_clock::duration _elapsed;
         Client _client;
+        bool _running;
 
     };
 
