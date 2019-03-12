@@ -186,7 +186,24 @@ namespace elma {
 
         return *this;
 
-    }
+    }  
 
+    //! Run the manager until the provided contion is true or until a process calls halt().
+    //! \param The condition, a function returning a boolean and taking no arguments.
+    //! \return A reference to the manager, for chaining
+    Manager& Manager::run(std::function<bool()> condition)  {
+
+        _start_time = high_resolution_clock::now();
+        _elapsed = high_resolution_clock::duration::zero();
+        start();        
+
+        while ( condition() ) {
+            update();
+            _elapsed = high_resolution_clock::now() - _start_time;
+        }
+
+        return *this;
+
+    }
 
 }

@@ -41,8 +41,9 @@ namespace elma {
         Manager& update();        
         Manager& stop();
 
-        Manager& run(high_resolution_clock::duration);
+        Manager& run(high_resolution_clock::duration runtime);
         Manager& run();
+        Manager& run(std::function<bool()> condition);
 
         //! Getter
         //! \return The time the Manager was most recently started
