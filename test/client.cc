@@ -59,7 +59,7 @@ namespace {
         GetTester p;
         m.schedule(p,1_ms)
          .init()
-         .run(1_s);
+         .run([&](){ return p.got_response; });
     }
 
 }
