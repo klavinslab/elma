@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <iostream>
+#include <algorithm>
 #include "elma.h"
 
 namespace elma {
@@ -117,7 +118,7 @@ namespace elma {
     Manager& Manager::update() {
         _client.process_responses();
         return all([this](Process& p) {
-            if ( _elapsed > p.last_update() + p.period() ) {
+            if ( _elapsed >= p.last_update() + p.period() ) {
                 p._update(_elapsed);
             }
         });
@@ -142,12 +143,12 @@ namespace elma {
     //! \return A reference to the manager, for chaining
     Manager& Manager::set_priority(Process& process, int priority) {
 
-    if (Priority_min <= priority && priority <= Priority_max  ){
-        process._priority = priority;
-        sort_processes();
-    } else {
-        throw Exception("Priority must be between -5(low priority) and 15(high priority)");
-    }    
+        if (Priority_min <= priority && priority <= Priority_max  ){
+            process._priority = priority;
+            sort_processes();
+        } else {
+            throw Exception("Priority must be between -5(low priority) and 15(high priority)");
+        }    
         return *this;
     }
 
@@ -162,7 +163,7 @@ namespace elma {
 
         while ( _elapsed < runtime ) {
             update();
-            _elapsed = high_resolution_clock::now() - _start_time;
+            update_elapsed_time();
         }
 
         stop();
@@ -181,8 +182,10 @@ namespace elma {
 
         while ( _running ) {
             update();
-            _elapsed = high_resolution_clock::now() - _start_time;
+            update_elapsed_time();
         }
+
+        stop();
 
         return *this;
 
@@ -199,11 +202,42 @@ namespace elma {
 
         while ( condition() ) {
             update();
-            _elapsed = high_resolution_clock::now() - _start_time;
+            update_elapsed_time();
         }
+
+        stop();
 
         return *this;
 
+    }
+
+    //! Updates the elapsed time of the manager.
+    //! In normal mode, elapsed is the time since starting the manager.
+    //! In simulated mode, elapsed is set to the time of the next scheduled event.
+    //! If no processes are scheduled, will always runs in normal mode.
+    void Manager::update_elapsed_time() {
+
+        // Only run in simulated time if we have the flag set and have processes.
+        if(_simulated_time && !_processes.empty()) {
+
+            // Find the process that has the smallest time till next update.
+            auto min_iter = std::min_element(_processes.begin(), _processes.end() ,[](Process * lhs, Process * rhs) {
+                auto lhsTime = lhs->last_update() + lhs->period();
+                auto rhsTime = rhs->last_update() + rhs->period();
+                return lhsTime < rhsTime;
+            });
+
+            Process* nextup = *min_iter;
+
+            auto newTime = nextup->last_update() + nextup->period();
+
+            _elapsed = newTime;
+
+        } else {
+
+            _elapsed = high_resolution_clock::now() - _start_time;
+
+        }
     }
 
 }

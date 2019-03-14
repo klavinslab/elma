@@ -28,7 +28,7 @@ namespace elma {
         public: 
 
         //! Default constructor
-        Manager() : _running(false) {}
+        Manager() : _running(false), _simulated_time(false) {}
         
         Manager& schedule(Process& process, high_resolution_clock::duration period);
         Manager& all(std::function<void(Process&)> f);
@@ -40,6 +40,12 @@ namespace elma {
         Manager& start();
         Manager& update();        
         Manager& stop();
+
+        //! Sets if the manager will run in simulated time.
+        //! In simulated time, the next schefuled process will immediately run at the completion of the last.
+        //! \param If the manager runs in simulated time.
+        //! \return A reference to the manager, for chaining
+        inline Manager& set_simulated_time(bool simulated) { _simulated_time = simulated; };
 
         Manager& run(high_resolution_clock::duration runtime);
         Manager& run();
@@ -63,6 +69,9 @@ namespace elma {
         Client& client() { return _client; }
 
         private:
+
+        void update_elapsed_time();
+
         const int Priority_min = -5, Priority_max = 15;
         vector<Process *> _processes;
         map<string, Channel *> _channels;
@@ -71,6 +80,7 @@ namespace elma {
         high_resolution_clock::duration _elapsed;
         Client _client;
         bool _running;
+        bool _simulated_time;
 
     };
 
