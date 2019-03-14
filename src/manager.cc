@@ -157,18 +157,7 @@ namespace elma {
     //! \return A reference to the manager, for chaining
     Manager& Manager::run(high_resolution_clock::duration runtime) {
 
-        _start_time = high_resolution_clock::now();
-        _elapsed = high_resolution_clock::duration::zero();
-        start();        
-
-        while ( _elapsed < runtime ) {
-            update();
-            update_elapsed_time();
-        }
-
-        stop();
-
-        return *this;
+        return run([&]() { return _elapsed < runtime; });
 
     }
 
@@ -176,18 +165,7 @@ namespace elma {
     //! \return A reference to the manager, for chaining
     Manager& Manager::run() {
 
-        _start_time = high_resolution_clock::now();
-        _elapsed = high_resolution_clock::duration::zero();
-        start();        
-
-        while ( _running ) {
-            update();
-            update_elapsed_time();
-        }
-
-        stop();
-
-        return *this;
+        return run([&]() { return _running; });
 
     }  
 
