@@ -15,7 +15,8 @@ RUN apt-get update && \
     apt-get install -y cppcheck && \
     apt-get install -y graphviz && \
     apt-get install -y doxygen && \
-    apt-get install -y nano
+    apt-get install -y nano && \
+    apt-get install -y screen
 
 # Build google test
 WORKDIR /usr/src
@@ -38,10 +39,13 @@ RUN rm -r /tmp/cpp-httplib
 EXPOSE 8080
 
 # Install elma tests
-RUN mkdir /usr/src/elma
-COPY . /usr/src/elma
-WORKDIR /usr/src/elma
+RUN mkdir /usr/local/src/elma
+COPY . /usr/local/src/elma
+WORKDIR /usr/local/src/elma
 RUN make
+
+RUN ln -s /usr/local/src/elma/include /usr/local/include/elma
+RUN ln -s /usr/local/src/elma/lib/libelma.a /usr/local/lib
 
 WORKDIR /source
 
