@@ -97,6 +97,11 @@ namespace elma {
         //! time the Manager called the update() method.        
         inline high_resolution_clock::duration previous_update() { return _previous_update; }
 
+        //! Getter
+        //! \return The duration of time between the start time and the next scheduled  
+        //! time the Manager should call the update() method.
+        inline high_resolution_clock::duration next_update() { return period() * num_updates();};
+
         // documentation for these methods is in process.cc
         Channel& channel(string name);
         double milli_time();

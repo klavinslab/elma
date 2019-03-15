@@ -28,7 +28,7 @@ namespace elma {
         public: 
 
         //! Default constructor
-        Manager() : _running(false), _simulated_time(false) {}
+        Manager() : _running(false), _simulated_time(false), _update_time_calls(0) {}
         
         Manager& schedule(Process& process, high_resolution_clock::duration period);
         Manager& all(std::function<void(Process&)> f);
@@ -64,6 +64,11 @@ namespace elma {
         Manager& watch(string event_name, std::function<void(Event&)> handler);
         Manager& emit(const Event& event);
         Client& client() { return _client; }
+
+        protected: 
+
+        // Used for testing purposes.
+        int _update_time_calls;
 
         private:
 
