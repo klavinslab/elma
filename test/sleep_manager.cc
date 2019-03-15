@@ -37,7 +37,7 @@ namespace {
     }
 
     TEST(SleepManager, Simulated) {
-        SimProcess tp("Realtime Process");
+        SimProcess tp("Simulated Process");
         TestManager m;
         m.schedule(tp, 10_ms)
         .init()
