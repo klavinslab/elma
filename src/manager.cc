@@ -225,8 +225,8 @@ namespace elma {
             
             // Find the process that has the smallest time till next update.
             auto min_iter = std::min_element(_processes.begin(), _processes.end() ,[](Process * lhs, Process * rhs) {
-                auto lhsTime = lhs->last_update() + lhs->period();
-                auto rhsTime = rhs->last_update() + rhs->period();
+                auto lhsTime = lhs->next_update();
+                auto rhsTime = rhs->next_update();
                 return lhsTime < rhsTime;
             });
 
