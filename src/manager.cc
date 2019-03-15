@@ -118,7 +118,7 @@ namespace elma {
     Manager& Manager::update() {
         _client.process_responses();
         return all([this](Process& p) {
-            if ( _elapsed >= p.last_update() + p.period() ) {
+            if ( _elapsed >= p.next_update() ) {
                 p._update(_elapsed);
             }
         });
@@ -207,14 +207,22 @@ namespace elma {
     }
 
     //! Updates the elapsed time of the manager.
-    //! In normal mode, elapsed is the time since starting the manager.
+    //! In realtime mode, sleeps until the next scheduled process update.
     //! In simulated mode, elapsed is set to the time of the next scheduled event.
-    //! If no processes are scheduled, will always runs in normal mode.
+    //! If no processes are scheduled, will always run in realtime mode.
     void Manager::update_elapsed_time() {
 
-        // Only run in simulated time if we have the flag set and have processes.
-        if(_simulated_time && !_processes.empty()) {
+        // Used for testing purposes only.
+        ++_update_time_calls;
 
+        // Only run in simulated time if we have the flag set and have processes.
+        if (_processes.empty()) 
+        {
+            
+            _elapsed = high_resolution_clock::now() - _start_time;
+
+        } else { 
+            
             // Find the process that has the smallest time till next update.
             auto min_iter = std::min_element(_processes.begin(), _processes.end() ,[](Process * lhs, Process * rhs) {
                 auto lhsTime = lhs->last_update() + lhs->period();
@@ -223,15 +231,23 @@ namespace elma {
             });
 
             Process* nextup = *min_iter;
+            auto nextUpdateTime = nextup->next_update();
 
-            auto newTime = nextup->last_update() + nextup->period();
+            // When simulating time, jump to the next scheduled update time.
+            if(_simulated_time) {
 
-            _elapsed = newTime;
+                _elapsed = nextUpdateTime;
 
-        } else {
+            // In realtime sleep until the next scheduled update time.
+            } else {
 
-            _elapsed = high_resolution_clock::now() - _start_time;
+                _elapsed = high_resolution_clock::now() - _start_time;
+                auto sleepTime = nextUpdateTime - _elapsed;
 
+                std::this_thread::sleep_for(sleepTime);
+                _elapsed = high_resolution_clock::now() - _start_time;
+
+            }
         }
     }
 
