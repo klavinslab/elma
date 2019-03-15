@@ -67,4 +67,3 @@ $(TARGETDIR)/$(TARGET): $(OBJECTS) $(HEADERS)
 #Compile
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT) $(HEADERS)
 	$(CC) $(CFLAGS) $(INC) -c -fPIC -o $@ $<
-
