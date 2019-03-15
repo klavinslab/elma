@@ -134,6 +134,23 @@ namespace elma {
 
         return *this;
     }
+
+    //! Sets if the manager will run in simulated time.
+    //! In simulated time, the next schefuled process will immediately run at the completion of the last.
+    //! \return A reference to the manager, for chaining
+    Manager& Manager::use_simulated_time() { 
+        _simulated_time = true; 
+        return *this;
+    };
+
+    //! Sets if the manager will run in real time.
+    //! In real time, the manager will continually advance time until the next process needs to update.
+    //! \param If the manager runs in simulated time.
+    //! \return A reference to the manager, for chaining
+    Manager& Manager::use_real_time() { 
+        _simulated_time = false; 
+        return *this;
+    };
     
     //! Set Process Priority and sort _Processes to ensure higher priority are updated first. 
     //! Priority may be set -5 (low priority) to 15 (high priority)

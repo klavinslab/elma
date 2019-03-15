@@ -41,11 +41,8 @@ namespace elma {
         Manager& update();        
         Manager& stop();
 
-        //! Sets if the manager will run in simulated time.
-        //! In simulated time, the next schefuled process will immediately run at the completion of the last.
-        //! \param If the manager runs in simulated time.
-        //! \return A reference to the manager, for chaining
-        inline Manager& set_simulated_time(bool simulated) { _simulated_time = simulated; };
+        Manager& use_simulated_time();
+        Manager& use_real_time();
 
         Manager& run(high_resolution_clock::duration runtime);
         Manager& run();

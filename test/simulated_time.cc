@@ -40,7 +40,7 @@ namespace {
         Manager m;
         m.schedule(tp, 10ms)
         .init()
-        .set_simulated_time(true);
+        .use_simulated_time();
 
         auto start = std::chrono::high_resolution_clock::now();
         m.run(1s);
