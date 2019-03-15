@@ -131,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;- Neils Lohmann&#39;s JSON library: https://github.com/nlohmann/json</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;- [My fork](https://github.com/klavins/cpp-httplib.git) of [yhirose](https://github.com/yhirose)&#39;s HTTP library</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;Installation on Raspbian</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;Installation on Unix systems (e.g. Raspbian)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;---</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;First install required packages available through apt-get</div>
@@ -184,19 +184,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;which on a pi 3 model B+ returns &#39;armv71&#39;. If your pi is different, you might need to change the ifeq statments in `test/Makefile` and `examples/Makefile`.</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;Usage</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;===</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;See the examples in the `examples` directory for how to build new event loops with Elma.</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;License</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;===</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;This software is open source and uses the MIT license. Details can be found [here](https://github.com/klavinslab/elma).</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;If you would like to treat elma as a library, so you can link in other code, you should link to the relevant files in to the unversal system resources (usr) as follows:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;```bash</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;ln -s include /usr/local/include/elma</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;ln -s lib/libelma.a /usr/local/lib/libelma.a</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;```</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;Then you can do </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;```c++</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;#include &quot;elma/elma.h&quot;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;```</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;in your code and use the `-lelma` flag while linking. See the [example elma project](https://github.com/klavinslab/elma_project) for an example.</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;Usage</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;===</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;See the examples in the `examples` directory for how to build new event loops with Elma.</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;License</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;===</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;This software is open source and uses the MIT license. Details can be found [here](https://github.com/klavinslab/elma).</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Mar 12 2019 00:54:07 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Fri Mar 15 2019 20:38:55 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.8
   </small></address>
