@@ -15,16 +15,9 @@ BUILDDIR    := ./build
 TARGETDIR   := ./bin
 SRCEXT      := cc
 
-#Asan library
-ifeq ($(ARCH),armv7l)
-	ASAN := -static-libasan
-else
-	ASAN := -lasan
-endif
-
 #Flags, Libraries and Includes
-CFLAGS      := -fsanitize=address -ggdb
-LIB         := -L../lib -lgtest -lpthread $(ASAN) -lelma -lssl -lcrypto
+CFLAGS      := -ggdb
+LIB         := -L../lib -lgtest -lpthread -lelma -lssl -lcrypto
 INC         := -I$(INCDIR)
 INCDEP      := -I$(INCDIR)
 ELMALIB		:= ../lib/libelma.a

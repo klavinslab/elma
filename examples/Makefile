@@ -9,16 +9,9 @@ CC          := g++ -std=c++14 -Wno-psabi
 #The Directories, Source, Includes, Objects, Binary and Resources
 SRCEXT      := cc
 
-#Asan library
-ifeq ($(ARCH),armv7l)
-	ASAN := -static-libasan
-else
-	ASAN := -lasan
-endif
-
 #Flags, Libraries and Includes
-CFLAGS      := -fsanitize=address -ggdb
-LIB         := -lgtest -lpthread $(ASAN) -lelma -lssl -lcrypto
+CFLAGS      := -ggdb
+LIB         := -lgtest -lpthread -lelma -lssl -lcrypto
 INCLUDE		:= -I../include
 LIBDIR		:= -L../lib
 ELMALIB		:= ../lib/libelma.a

@@ -1,6 +1,0 @@
-<map id="elma::State" name="elma::State">
-<area shape="rect" id="node2" href="$classmicrowave__example_1_1DoorClosedOff.html" title="The state in which the oven&#39;s door is closed and the oven is off. See examples/microwave.cc. " alt="" coords="156,5,316,47"/>
-<area shape="rect" id="node3" href="$classmicrowave__example_1_1DoorClosedOn.html" title="The state in which the oven&#39;s door is closed and the oven is on. See examples/microwave.cc. " alt="" coords="156,71,316,112"/>
-<area shape="rect" id="node4" href="$classmicrowave__example_1_1DoorOpen.html" title="The state in which the oven&#39;s door is open and the oven is off. See examples/microwave.cc. " alt="" coords="156,136,316,177"/>
-<area shape="rect" id="node5" href="$classtoggle__switch__example_1_1Mode.html" title="A generic state class with nothing more than a name. See examples/toggle_switch.cc. " alt="" coords="151,201,321,243"/>
-</map>

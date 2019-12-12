@@ -13,8 +13,8 @@ TARGETDIR   := ./lib
 SRCEXT      := cc
 
 #Flags, Libraries and Includes
-CFLAGS      := -fsanitize=address -ggdb
-LIB         := -lgtest -lpthread -lasan
+CFLAGS      := -ggdb
+LIB         := -lgtest -lpthread 
 INC         := -I$(INCDIR)
 INCDEP      := -I$(INCDIR)
 
