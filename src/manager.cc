@@ -1,6 +1,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <algorithm>
+#include <mutex>
 #include "elma.h"
 
 namespace elma {
@@ -116,12 +117,14 @@ namespace elma {
     //! Update all processes if enough time has passed. Usually not called directly.
     //! \return A reference to the manager, for chaining
     Manager& Manager::update() {
+        _update_mutex.lock();
         _client.process_responses();
         return all([this](Process& p) {
             if ( _elapsed >= p.last_update() + p.period() ) {
                 p._update(_elapsed);
             }
         });
+        _update_mutex.unlock();
     }
 
     //! sort _Processes based on _priority to ensure higher priority process are updated first.

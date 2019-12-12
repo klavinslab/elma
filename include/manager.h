@@ -5,6 +5,7 @@
 #include <map>
 #include <chrono>
 #include <functional>
+#include <mutex>
 
 #include "elma.h"
 
@@ -56,6 +57,11 @@ namespace elma {
         //! \return The duration of time since the manager was most recently started
         inline high_resolution_clock::duration elapsed() { return _elapsed; }
 
+        //! Getter
+        //! \return The mutex used for the update method. Useful if some other
+        //! non-elma process needs to act on shared data.
+        inline std::mutex& get_update_mutex() { return _update_mutex; }
+
         // Channel Interface
         Manager& add_channel(Channel&);
         Channel& channel(string);
@@ -78,6 +84,8 @@ namespace elma {
         Client _client;
         bool _running;
         bool _simulated_time;
+
+        std::mutex _update_mutex;
 
     };
 
