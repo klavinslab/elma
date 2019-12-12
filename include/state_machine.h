@@ -35,7 +35,7 @@ namespace elma {
         //! Set whether the state machine should propagate transitions (default = false)
         //! \param val True or false 
         //! \return A reference to the state machine, for chaining    
-        inline StateMachine& set_propagate(bool val) { _propagate = val; }
+        inline StateMachine& set_propagate(bool val) { _propagate = val; return *this; }
 
         //! \return The current state
         State& current() { return *_current; }

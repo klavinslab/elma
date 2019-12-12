@@ -5,7 +5,7 @@
 #
 
 # Get the GCC preinstalled image from Docker Hub
-FROM gcc:4.9
+FROM gcc
 
 MAINTAINER Eric Klavins "klavins@uw.edu"
 
