@@ -71,6 +71,10 @@ namespace elma {
         //! \return The name of the process.
         inline string name() { return _name; }
 
+        //! Setter
+        //! \return Set the name of the process.
+        inline void set_name(std::string str) { _name = str; }        
+
         //! Getter
         //! \return The status of the process
         inline status_type status() { return _status; }

@@ -119,12 +119,13 @@ namespace elma {
     Manager& Manager::update() {
         _update_mutex.lock();
         _client.process_responses();
-        return all([this](Process& p) {
+        all([this](Process& p) {
             if ( _elapsed >= p.last_update() + p.period() ) {
                 p._update(_elapsed);
             }
         });
         _update_mutex.unlock();
+        return *this;
     }
 
     //! sort _Processes based on _priority to ensure higher priority process are updated first.
@@ -200,6 +201,7 @@ namespace elma {
 
         while ( condition() ) {
             update();
+            std::this_thread::sleep_for(_nice_sleep_amount);
             update_elapsed_time();
         }
 

@@ -29,7 +29,7 @@ namespace elma {
         public: 
 
         //! Default constructor
-        Manager() : _running(false), _simulated_time(false) {}
+        Manager() : _running(false), _simulated_time(false), _nice_sleep_amount(1_us) {}
         
         Manager& schedule(Process& process, high_resolution_clock::duration period);
         Manager& all(std::function<void(Process&)> f);
@@ -62,6 +62,13 @@ namespace elma {
         //! non-elma process needs to act on shared data.
         inline std::mutex& get_update_mutex() { return _update_mutex; }
 
+        //! Setter
+        //! \return A reference to the manager, for chaining
+        inline Manager& set_niceness(high_resolution_clock::duration n) {
+            _nice_sleep_amount = n;
+            return *this;
+        }
+
         // Channel Interface
         Manager& add_channel(Channel&);
         Channel& channel(string);
@@ -86,6 +93,7 @@ namespace elma {
         bool _simulated_time;
 
         std::mutex _update_mutex;
+        high_resolution_clock::duration _nice_sleep_amount;
 
     };
 
