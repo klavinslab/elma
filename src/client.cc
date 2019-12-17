@@ -1,4 +1,4 @@
-#define CPPHTTPLIB_OPENSSL_SUPPORT
+// #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "httplib/httplib.h"
 #include "elma.h"
 #include <thread>
@@ -54,13 +54,19 @@ namespace elma {
 
     const std::shared_ptr<httplib::Response> Client::_get_aux(std::string url) {
         auto parts = url_parts(url);
+#if CPPHTTPLIB_OPENSSL_SUPPORT           
         if ( _use_ssl ) {
+        
             httplib::SSLClient cli(parts.first.c_str(), 443);
             return cli.Get(parts.second.c_str());              
+
         } else {
+#endif            
             httplib::Client cli(parts.first.c_str(), 80);
-            return cli.Get(parts.second.c_str());              
+            return cli.Get(parts.second.c_str());       
+#if CPPHTTPLIB_OPENSSL_SUPPORT                       
         }        
+#endif
     }
 
     void Client::_get_thread(std::string url, std::function<void(json&)> handler) {

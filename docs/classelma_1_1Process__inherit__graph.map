@@ -1,0 +1,11 @@
+<map id="elma::Process" name="elma::Process">
+<area shape="rect" id="node2" href="$classbasic__example_1_1BasicProcess.html" title="Example: A very basic process class. See the file examples/basic.cc for usage. " alt="" coords="173,5,387,32"/>
+<area shape="rect" id="node3" href="$classdriving__example_1_1Car.html" title="Example: Another car simulation process. See examples/driving.cc. " alt="" coords="199,56,361,83"/>
+<area shape="rect" id="node4" href="$classdriving__example_1_1CruiseControl.html" title="Example: A cruise controller for a Car process. See examples/driving.cc. " alt="" coords="167,107,393,133"/>
+<area shape="rect" id="node5" href="$classdriving__example_1_1Driver.html" title="Example: A simulated driver, who keeps cycling between 50 and 60 kph. See examples/driving.cc. " alt="" coords="191,157,369,184"/>
+<area shape="rect" id="node6" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="205,208,355,235"/>
+<area shape="rect" id="node7" href="$classfeedback__example_1_1Car.html" title="Example: A car simulation process. See examples/feedback.cc. " alt="" coords="192,259,368,285"/>
+<area shape="rect" id="node8" href="$classfeedback__example_1_1CruiseControl.html" title="Example: A cruise controller for a Car process. See examples/feedback.cc. " alt="" coords="183,310,377,351"/>
+<area shape="rect" id="node9" href="$classmicrowave__example_1_1Power.html" title="A class the models the power component of a microwave oven. See examples/microwave.cc. " alt="" coords="197,375,363,417"/>
+<area shape="rect" id="node10" href="$classtoggle__switch__example_1_1Trigger.html" title="A process class that sends switch events. See examples/toggle_switch.cc. " alt="" coords="192,441,368,482"/>
+</map>

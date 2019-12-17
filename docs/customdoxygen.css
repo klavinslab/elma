@@ -1,0 +1,98 @@
+#titlearea {
+    padding: 16px;
+    background: rgb(27, 23, 109);
+    color: white;
+}
+
+#projectname {
+    text-transform: uppercase;
+    font-size: 48pt;
+}
+
+#projectbrief {
+    margin-bottom: 8px;
+    font-size: 24pt;
+    color: #ddd;
+}
+
+h1 {
+    border-bottom: 1px solid #879ECB;
+    padding-bottom: 10px;
+    color: #354C7B;    
+}
+
+h2 {
+    font-weight: normal;
+    color: #354C7B;
+}
+
+.fragment {
+    margin-left: 28px !important;
+    margin-right: 28px !important;    
+}
+
+/* TABS */
+
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    width: 100%;
+    z-index: 101;
+    font-size: 13px;
+    font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+    border-bottom: 1pt solid #eee;
+}
+
+.tabs2 {
+    font-size: 10px;
+}
+.tabs3 {
+    font-size: 9px;
+}
+
+.tablist {
+    margin: 0;
+    padding: 0;
+    display: table;
+}
+
+.tablist li {
+    float: left;
+    display: table-cell;
+    background-image: none;
+    line-height: 36px;
+    list-style: none;
+}
+
+.tablist a {
+    display: block;
+    padding: 0 20px;
+    font-weight: bold;
+    background-image: none;
+    background-repeat:no-repeat;
+    background-position:right;
+    color: #030;
+    text-shadow: none;
+    text-decoration: none;
+    outline: none;
+}
+
+.tabs3 .tablist a {
+    padding: 0 10px;
+}
+
+.tablist a:hover {
+    background: #ddd;
+    background-image: none;
+    background-repeat:repeat-x;
+    color: #aaa;
+    text-shadow: none;
+    text-decoration: none;
+}
+
+.tablist li.current a {
+    background: rgb(193, 210, 243);    
+    background-image: none;
+    background-repeat:repeat-x;
+    color: #000;
+    text-shadow: none;
+}
