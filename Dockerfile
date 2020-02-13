@@ -4,6 +4,13 @@
 # docker run -v $PWD:/source -it elma bash
 #
 
+# To build this image and push to dockerhub, do
+# docker build -t klavins/elma:latest .
+# docker push klavins/elma:latest 
+# Then check dockerhub to see if the tests passed.
+
+# Alternatively, just commit and push to github and it will autobuild.
+
 # Get the GCC preinstalled image from Docker Hub
 FROM gcc
 
