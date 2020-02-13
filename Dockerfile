@@ -10,6 +10,8 @@
 # Then check dockerhub to see if the tests passed.
 
 # Alternatively, just commit and push to github and it will autobuild.
+# You should make sure thest tests work, as in
+# docker run -it klavins/elma:latest /usr/local/src/elma/test/bin/test
 
 # Get the GCC preinstalled image from Docker Hub
 FROM gcc

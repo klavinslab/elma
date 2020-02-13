@@ -33,7 +33,7 @@ namespace elma {
     Client& Client::get(std::string url, std::function<void(json&)> handler) {
         std::thread t(&Client::_get_thread,this,url,handler);
         t.detach(); // detaching means we don't have to join later
-	return *this;
+	    return *this;
     }
 
     Client& Client::process_responses() {
@@ -80,7 +80,9 @@ namespace elma {
             if (response && response->status == 200) {
                 json_response = json::parse(response->body);
              } else if ( response ) {
-                std::cout << "Warning:: Elma client connected to a server that returned Error: " 
+                std::cout << "Warning:: Elma client connected to " 
+                          << url 
+                          << ", which returned Error: "
                           << response->status 
                           << std::endl;
             } else {

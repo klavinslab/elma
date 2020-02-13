@@ -21,10 +21,10 @@ namespace {
         Client c;
 
         for( int i=0; i<3; i++ ) {
-          c.get("https://api.github.com/repos/klavins/ecep520", [](json& response) {
+          c.get("https://jsonplaceholder.typicode.com/todos/1", [](json& response) {
               // Note: The body of this function runs in the main thread after
               // c.process_responses is called below.
-              ASSERT_EQ("ECEP520", (string) response["name"]);
+              ASSERT_EQ("delectus aut autem", (string) response["title"]);
           });
         }
 
