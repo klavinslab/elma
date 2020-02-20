@@ -52,7 +52,7 @@ namespace elma {
         //! Do not override init() for a state machine.        
         void stop();
 
-        private:
+        protected:
         vector<Transition> _transitions;
         State * _initial;
         State * _current;
