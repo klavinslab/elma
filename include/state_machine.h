@@ -40,16 +40,24 @@ namespace elma {
         //! \return The current state
         State& current() { return *_current; }
 
-        //! Do not override init() for a state machine.
-        void init() final;
+        //! If you override init() in your state machine class, 
+        //! you should call StateMachine::init() at the end of you
+        //! init method.
+        void init();
 
-        //! Do not override init() for a state machine.        
-        void start() final;
+        //! If you override start() in your state machine class, 
+        //! you should call StateMachine::start() at the end of you
+        //! start method.     
+        void start();
 
-        //! Do not override init() for a state machine.        
-        void update() final;
+        //! If you override update() in your state machine class, 
+        //! you should call StateMachine::update() at the end of you
+        //! update method.       
+        void update();
 
-        //! Do not override init() for a state machine.        
+        //! If you override stop() in your state machine class, 
+        //! you should call StateMachine::stop() at the end of you
+        //! stop method.           
         void stop();
 
         protected:
