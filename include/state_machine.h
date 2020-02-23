@@ -37,6 +37,9 @@ namespace elma {
         //! \return A reference to the state machine, for chaining    
         inline StateMachine& set_propagate(bool val) { _propagate = val; return *this; }
 
+        //! Get the list of transitions
+        inline vector<Transition> transitions() { return _transitions; }
+
         //! \return The current state
         State& current() { return *_current; }
 
