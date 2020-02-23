@@ -113,6 +113,8 @@ namespace elma {
 
         void halt();
 
+        void set_manager(Manager * m_ptr);
+
         private:
 
         // Manager interface
@@ -129,7 +131,9 @@ namespace elma {
                                         _last_update;     // duration from start to last update
         time_point<high_resolution_clock> _start_time;    // time of most recent start
         int _num_updates, _priority;                      // number of times update() has been called
-        Manager * _manager_ptr;                           // a pointer to the manager        
+
+        protected:
+        Manager * _manager_ptr;                           // a pointer to the manager
 
     };
 

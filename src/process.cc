@@ -84,6 +84,15 @@ namespace elma {
         stop();
     }       
 
-    void Process::halt() { _manager_ptr->stop(); }    
+    void Process::halt() { _manager_ptr->stop(); }  
+
+    void Process::set_manager(Manager * m_ptr) {
+        if ( _manager_ptr == NULL ) {
+            _manager_ptr = m_ptr;
+        } else {
+            throw Exception("A process cannot have two managers");
+        }
+    }           
 
 }
+
