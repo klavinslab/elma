@@ -1,3 +1,4 @@
 <map id="microwave_example::Power" name="microwave_example::Power">
-<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="32,5,145,32"/>
+<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="32,95,145,121"/>
+<area shape="rect" id="node3" href="$classelma_1_1Manager.html" title="The Process Manager class. " alt="" coords="29,5,148,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="driving_example::Driver" name="driving_example::Driver">
-<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="38,5,151,32"/>
+<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="38,95,151,121"/>
+<area shape="rect" id="node3" href="$classelma_1_1Manager.html" title="The Process Manager class. " alt="" coords="35,5,154,32"/>
 </map>

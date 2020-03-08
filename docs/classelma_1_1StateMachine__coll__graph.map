@@ -1,3 +1,5 @@
 <map id="elma::StateMachine" name="elma::StateMachine">
-<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="24,5,137,32"/>
+<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="8,95,121,121"/>
+<area shape="rect" id="node3" href="$classelma_1_1Manager.html" title="The Process Manager class. " alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node5" href="$classelma_1_1State.html" title="States for the StateMachine class. " alt="" coords="368,95,465,121"/>
 </map>

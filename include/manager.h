@@ -32,6 +32,7 @@ namespace elma {
         Manager() : _running(false), _simulated_time(false), _nice_sleep_amount(1_us) {}
         
         Manager& schedule(Process& process, high_resolution_clock::duration period);
+        Manager& remove(Process& process);
         Manager& all(std::function<void(Process&)> f);
 
         Manager& set_priority(Process& process, int priority);
@@ -39,7 +40,7 @@ namespace elma {
 
         Manager& init();
         Manager& start();
-        Manager& update();        
+        Manager& update();
         Manager& stop();
 
         Manager& use_simulated_time();

@@ -1,3 +1,4 @@
 <map id="feedback_example::CruiseControl" name="feedback_example::CruiseControl">
-<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="46,5,159,32"/>
+<area shape="rect" id="node2" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="46,95,159,121"/>
+<area shape="rect" id="node3" href="$classelma_1_1Manager.html" title="The Process Manager class. " alt="" coords="43,5,162,32"/>
 </map>

@@ -26,6 +26,17 @@ namespace elma {
 
     }
 
+    //! Remove a Process from the manager so it will no longer be updated. Calls its stop() method.
+    //! \param process The process to be removed.
+    Manager& Manager::remove(Process& process) {
+        process.stop();
+        auto i = remove_if(_processes.begin(), _processes.end(), [&](Process * p) {
+            return p == &process; 
+        });
+        _processes.erase(i, _processes.end());
+        return *this;
+    }
+
     //! Add a channel to the manager
     //! \param The channel to be added
     //! \return A reference to the manager, for chaining

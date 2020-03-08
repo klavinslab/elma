@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acab31d0187990cf28cc4d56ef3e63e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff7ec0e7409420c8d92a59443066738c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classelma_1_1Manager.html">Manager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classelma_1_1Manager.html#aff7ec0e7409420c8d92a59443066738c">schedule</a> (<a class="el" href="classelma_1_1Process.html">Process</a> &amp;process, high_resolution_clock::duration period)</td></tr>
 <tr class="separator:aff7ec0e7409420c8d92a59443066738c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ffe70014360c2ae44ef702eb9f46da8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classelma_1_1Manager.html">Manager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classelma_1_1Manager.html#a7ffe70014360c2ae44ef702eb9f46da8">remove</a> (<a class="el" href="classelma_1_1Process.html">Process</a> &amp;process)</td></tr>
+<tr class="separator:a7ffe70014360c2ae44ef702eb9f46da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a235e27c868543b7512f4714394e4b208"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classelma_1_1Manager.html">Manager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classelma_1_1Manager.html#a235e27c868543b7512f4714394e4b208">all</a> (std::function&lt; void(<a class="el" href="classelma_1_1Process.html">Process</a> &amp;)&gt; f)</td></tr>
 <tr class="separator:a235e27c868543b7512f4714394e4b208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7308547d237e6406734f400d481abf4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classelma_1_1Manager.html">Manager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classelma_1_1Manager.html#a7308547d237e6406734f400d481abf4a">set_priority</a> (<a class="el" href="classelma_1_1Process.html">Process</a> &amp;process, int priority)</td></tr>
@@ -156,7 +158,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00032">32</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00043">43</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -183,7 +185,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00089">89</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00100">100</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -204,7 +206,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Retrieve a reference to an existing channel. Throws an error if no such channel exists. </p><dl class="section return"><dt>Returns</dt><dd>The channel requested. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00039">39</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00050">50</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -232,7 +234,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Getter </p><dl class="section return"><dt>Returns</dt><dd>The duration of time since the manager was most recently started </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00058">58</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00059">59</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +261,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager for chaining. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00074">74</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00085">85</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -287,7 +289,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Getter </p><dl class="section return"><dt>Returns</dt><dd>The mutex used for the update method. Useful if some other non-elma process needs to act on shared data. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00063">63</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00064">64</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +309,33 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialize all processes. Usually called before <a class="el" href="classelma_1_1Manager.html#a5ed2c14e0ba2d7243f33ba3b47c01ad5">run()</a> </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00098">98</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00109">109</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+
+</div>
+</div>
+<a id="a7ffe70014360c2ae44ef702eb9f46da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ffe70014360c2ae44ef702eb9f46da8">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classelma_1_1Manager.html">Manager</a> &amp; elma::Manager::remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classelma_1_1Process.html">Process</a> &amp;&#160;</td>
+          <td class="paramname"><em>process</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remove a <a class="el" href="classelma_1_1Process.html" title="An abstract base class for processes. ">Process</a> from the manager so it will no longer be updated. Calls its <a class="el" href="classelma_1_1Manager.html#af7e5060212d746c6376eae6551d200fd">stop()</a> method. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>The process to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00031">31</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -334,7 +362,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00179">179</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00190">190</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -354,7 +382,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Run the manager indefinitely or until a process calls halt(). </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00187">187</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00198">198</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -381,7 +409,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00196">196</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00207">207</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -448,7 +476,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Setter </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00067">67</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00068">68</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
 
 </div>
 </div>
@@ -486,7 +514,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00165">165</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00176">176</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -506,7 +534,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>sort _Processes based on _priority to ensure higher priority process are updated first. </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00133">133</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00144">144</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -526,7 +554,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Start all processes. Usually not called directly. </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00105">105</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00116">116</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -554,7 +582,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Getter </p><dl class="section return"><dt>Returns</dt><dd>The time the <a class="el" href="classelma_1_1Manager.html" title="The Process Manager class. ">Manager</a> was most recently started </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00054">54</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00055">55</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
 
 </div>
 </div>
@@ -574,7 +602,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Stop all processes. Usually not called directly. </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00112">112</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00123">123</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -594,7 +622,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Update all processes if enough time has passed. Usually not called directly. </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00119">119</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00130">130</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -620,7 +648,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00154">154</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00165">165</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -640,7 +668,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets if the manager will run in simulated time. In simulated time, the next schefuled process will immediately run at the completion of the last. </p><dl class="section return"><dt>Returns</dt><dd>A reference to the manager, for chaining </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00145">145</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00156">156</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -676,7 +704,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00057">57</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cc_source.html#l00068">68</a> of file <a class="el" href="manager_8cc_source.html">manager.cc</a>.</p>
 
 </div>
 </div>
@@ -688,7 +716,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by <a href="http://klavinslab.org">Eric Klavins</a> for UW ECE P 520<br>
-  Generated on Tue Dec 17 2019 01:13:36 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Sun Mar 8 2020 16:45:58 for Elma by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.13
   </small></address>
