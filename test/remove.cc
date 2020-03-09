@@ -23,16 +23,17 @@ namespace {
     };
 
     TEST(Event,SendRecv) {
-        TestProcess p("P"), q("Q");
+        TestProcess p("P"), q("Q"), r("R");
         Manager m;
         m.schedule(p,10_ms)
          .schedule(q,10_ms)
          .init();
-        
-        m.run(100_ms);
+        m.run(50_ms);
+        std::cout << "----\n";
         m.remove(q);
-        m.run(100_ms);
-
+        r.init();
+        m.add(r, 10_ms);
+        m.run(50_ms);
     }
 
 }

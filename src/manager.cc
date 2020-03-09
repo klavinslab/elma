@@ -26,14 +26,17 @@ namespace elma {
 
     }
 
-    //! Remove a Process from the manager so it will no longer be updated. Calls its stop() method.
-    //! \param process The process to be removed.
+    //! Remove a Process from the manager (possibly during an update) so it will no longer be updated. Calls its stop() method.
+    //! \param process The process to be removed.    
     Manager& Manager::remove(Process& process) {
-        process.stop();
-        auto i = remove_if(_processes.begin(), _processes.end(), [&](Process * p) {
-            return p == &process; 
-        });
-        _processes.erase(i, _processes.end());
+        _new_removals.push_back(&process);
+        return *this;        
+    }    
+
+    //! Add a Process to the manager during an update. 
+    //! \param process The process to be added.
+    Manager& Manager::add(Process& process, high_resolution_clock::duration period) {
+        _new_additions.push_back(std::make_tuple(&process, period));
         return *this;
     }
 
@@ -128,13 +131,36 @@ namespace elma {
     //! Update all processes if enough time has passed. Usually not called directly.
     //! \return A reference to the manager, for chaining
     Manager& Manager::update() {
+
         _update_mutex.lock();
         _client.process_responses();
+
+        // add new processes
+        for ( auto t : _new_additions ) {
+            auto process_ptr = std::get<0>(t);
+            auto duration = std::get<1>(t);
+            schedule(*process_ptr, duration);
+            process_ptr->_update(_elapsed);
+        }
+        _new_additions.erase(_new_additions.begin(), _new_additions.end());
+
+        // remove processes
+        for ( auto process : _new_removals ) {
+            process->stop();
+            auto i = remove_if(_processes.begin(), _processes.end(), [&](Process * p) {
+                return p == process; 
+            });
+            _processes.erase(i, _processes.end());
+        } 
+        _new_removals.erase(_new_removals.begin(), _new_removals.end());
+
+        // update all processes     
         all([this](Process& p) {
             if ( _elapsed >= p.last_update() + p.period() ) {
                 p._update(_elapsed);
             }
         });
+
         _update_mutex.unlock();
         return *this;
     }

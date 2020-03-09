@@ -32,6 +32,7 @@ namespace elma {
         Manager() : _running(false), _simulated_time(false), _nice_sleep_amount(1_us) {}
         
         Manager& schedule(Process& process, high_resolution_clock::duration period);
+        Manager& add(Process& process, high_resolution_clock::duration period);
         Manager& remove(Process& process);
         Manager& all(std::function<void(Process&)> f);
 
@@ -84,7 +85,8 @@ namespace elma {
         void update_elapsed_time();
 
         const int Priority_min = -5, Priority_max = 15;
-        vector<Process *> _processes;
+        vector<Process *> _processes, _new_removals;
+        vector<std::tuple<Process *, high_resolution_clock::duration>> _new_additions;
         map<string, Channel *> _channels;
         map<string, vector<std::function<void(Event&)>>> event_handlers;
         high_resolution_clock::time_point _start_time;
